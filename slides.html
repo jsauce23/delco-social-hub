@@ -2,393 +2,1089 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>DELCO Social Hub — What It Does</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DELCO Social Hub — slides</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;min-width:0}
-html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden;
-  -webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
-body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;background:#F3F6FA;color:#0B1B33}
-img{max-width:100%;display:block}
-section{padding:56px 22px 64px;position:relative}
-section.light{background:#F3F6FA}
-section.light:nth-of-type(even){background:#fff}
-h1{font-size:clamp(46px,13vw,86px);line-height:1;letter-spacing:-2px;font-weight:800;margin:0}
-h2{font-size:clamp(28px,7.5vw,44px);line-height:1.1;letter-spacing:-.8px;font-weight:800;margin:0 0 14px}
-h3{font-size:clamp(19px,5vw,24px);font-weight:800;margin:0 0 8px;line-height:1.2}
-p{margin:0}
-.lede{font-size:clamp(16px,4.3vw,20px);line-height:1.5;color:#46586F}
-.note{margin-top:22px;font-size:14px;color:#8494A8;line-height:1.6}
-.wrapper{max-width:760px;margin:0 auto}
-
-.cover{background:#0E2647;color:#fff;padding-bottom:0;overflow:hidden}
-.cover .logo{width:min(230px,58vw);height:auto;margin-bottom:34px}
-.cover .rule{width:74px;height:5px;background:#F6A21E;border-radius:3px}
-.cover .kicker{margin:16px 0 10px;font-size:13px;font-weight:800;letter-spacing:4px;color:#F6A21E}
-.cover .lede{color:#C4D4E8;margin-top:16px;max-width:30ch}
-.cover .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
-.cover .chips span{border:1px solid #33547F;border-radius:999px;padding:9px 18px;font-size:14px;
-  font-weight:600;color:#DCE7F5}
-.cover .dog{width:min(230px,56vw);height:auto;margin:26px auto -1px}
-.cover .foot{padding-bottom:26px;font-size:13px;color:#7F97B8;text-align:center}
-
-.qgrid{display:grid;gap:14px;margin-top:22px}
-.qcard{background:#fff;border:1px solid #DDE4EC;border-left:7px solid #F6A21E;border-radius:14px;padding:22px}
-.qcard p{font-size:16px;line-height:1.5;color:#46586F}
-
-.shot{margin:26px 0 22px}
-.points{margin:0;padding:0;list-style:none}
-.points li{position:relative;padding-left:22px;margin-bottom:11px;font-size:16px;line-height:1.5;color:#46586F}
-.points li:before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;
-  background:#F6A21E}
-
-.dark{background:#0E2647;color:#fff}
-.dark h2{color:#fff}
-.dark .lede{color:#C4D4E8;margin-top:24px}
-.trail{list-style:none;margin:26px 0 0;padding:0}
-.trail li{display:flex;align-items:center;gap:14px;padding:11px 0;position:relative}
-.trail li:not(:last-child):after{content:"";position:absolute;left:17px;top:44px;bottom:-6px;width:2px;
-  background:#2A4A78}
-.trail .n{width:36px;height:36px;border-radius:50%;background:#F6A21E;color:#0E2647;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;z-index:1}
-.trail b{font-size:17px;font-weight:600}
-.dark .foot{margin-top:34px;font-size:13px;color:#8FA6C4}
-
-@media (min-width:760px){
-  section{padding:88px 40px 96px}
-  .qgrid{grid-template-columns:1fr 1fr;gap:20px}
-  .shot{display:flex;justify-content:center}
-  .trail{display:flex;flex-wrap:wrap;gap:0 28px}
-  .trail li{flex:0 0 auto}
-  .trail li:not(:last-child):after{display:none}
-}
-
-.viewbar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;align-items:center;
-  justify-content:center;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));
-  background:rgba(14,38,71,.94);backdrop-filter:blur(6px)}
-.vb-tag{color:#93A6C2;font-size:13px}
-.vb-link{color:#F6A21E;font-size:13px;font-weight:600;text-decoration:none;
-  border:1px solid #2A4A78;border-radius:8px;padding:7px 13px}
-.vb-link:active{background:#12294A}
-body{padding-bottom:64px}
+  * { box-sizing: border-box; }
+  html, body {
+    height: 100%; width: 100%; margin: 0; padding: 0; background: #07172C;
+    overflow: hidden; position: fixed;
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    -webkit-text-size-adjust: 100%; text-size-adjust: 100%;
+  }
+  #frame { position: absolute; left: 0; top: 0; overflow: hidden; }
+  #stage {
+    position: absolute; left: 0; top: 0;
+    width: 1920px; height: 1080px; transform-origin: 0 0;
+  }
+  #stage > section {
+    position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
+    overflow: hidden; display: none !important;
+  }
+  #stage > section.on { display: flex !important; }
+  #stage aside { display: none !important; }
+  /* browsers add default margins to headings and paragraphs, which shifts
+     pinned elements down and makes them collide — remove them */
+  #stage h1, #stage h2, #stage h3, #stage h4, #stage p,
+  #stage ul, #stage ol, #stage figure, #stage blockquote { margin: 0; padding: 0; }
+  .bar {
+    position: absolute; left: 0; bottom: 0; width: 100%; height: 58px;
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    background: #0B1E38; border-top: 1px solid #1B3355;
+  }
+  .bar button {
+    background: #17325C; color: #fff; border: 0; border-radius: 9px;
+    font: 600 15px Inter, system-ui, sans-serif; padding: 10px 20px;
+    cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+  }
+  .bar button:active { background: #23477D; }
+    .switch{color:#F6A21E;text-decoration:none;font:600 14px Inter,system-ui,sans-serif;
+    border:1px solid #2A4A78;border-radius:8px;padding:9px 14px;margin-left:8px}
+  .switch:hover{background:#12294A}
+  .bar span { color: #B9C9DE; font-size: 14px; min-width: 62px; text-align: center; }
 </style>
 </head>
 <body>
-<section class="cover">
-  <img class="logo" src="" data-art="logo" alt="DELCO Heating and Cooling">
-  <div class="rule"></div>
-  <p class="kicker">INTERNAL MARKETING PLATFORM</p>
-  <h1>Social Hub</h1>
-  <p class="lede">One place to plan, create, approve and track everything DELCO posts.</p>
-  <div class="chips">
-    <span>Plan</span><span>Create</span><span>Approve</span><span>Track</span>
+<div id="frame"><div id="stage">
+<section id="cover" data-transition="fade" style="background:#0E2647; color:#FFFFFF; font-family:Inter, 'Helvetica Neue', Arial, sans-serif">
+  <div style="position:absolute; right:-220px; top:-320px; width:1200px; height:1200px; border-radius:50%; background:#1B3A66; opacity:0.55"></div>
+  <div style="position:absolute; left:-260px; bottom:-380px; width:900px; height:900px; border-radius:50%; background:#16345E; opacity:0.5"></div>
+  <img data-art="dog" alt="The DELCO mascot" style="position:absolute; right:150px; bottom:0; width:470px; height:820px; object-fit:contain">
+  <img data-art="logo" alt="DELCO Heating and Cooling" style="position:absolute; left:128px; top:96px; width:300px; height:186px; object-fit:contain">
+  <div style="position:absolute; left:128px; top:360px; width:96px; height:6px; background:#F6A21E; border-radius:3px"></div>
+  <p style="margin:0; position:absolute; left:128px; top:398px; width:900px; margin:0; font-size:26px; font-weight:800; letter-spacing:6px; color:#F6A21E">INTERNAL MARKETING PLATFORM</p>
+  <h1 style="margin:0; position:absolute; left:128px; top:452px; width:1100px; margin:0; font-size:150px; font-weight:800; line-height:1; letter-spacing:-5px">Social Hub</h1>
+  <p style="margin:0; position:absolute; left:128px; top:640px; width:940px; margin:0; font-size:38px; color:#C4D4E8; line-height:1.35">One place to plan, create, approve and track everything DELCO posts.</p>
+  <div style="position:absolute; left:128px; top:820px; width:1000px; display:flex; gap:14px">
+    <div style="border:1px solid #33547F; border-radius:999px; padding:14px 30px"><p style="margin:0; font-size:24px; font-weight:600; color:#DCE7F5">Plan</p></div>
+    <div style="border:1px solid #33547F; border-radius:999px; padding:14px 30px"><p style="margin:0; font-size:24px; font-weight:600; color:#DCE7F5">Create</p></div>
+    <div style="border:1px solid #33547F; border-radius:999px; padding:14px 30px"><p style="margin:0; font-size:24px; font-weight:600; color:#DCE7F5">Approve</p></div>
+    <div style="border:1px solid #33547F; border-radius:999px; padding:14px 30px"><p style="margin:0; font-size:24px; font-weight:600; color:#DCE7F5">Track</p></div>
   </div>
-  <img class="dog" src="" data-art="dog" alt="The DELCO mascot">
-  <p class="foot">Built for DELCO Heating &amp; Cooling · Prototype</p>
+  <p style="margin:0; position:absolute; left:128px; top:952px; margin:0; font-size:24px; color:#7F97B8">Built for DELCO Heating &amp; Cooling  ·  Prototype</p>
+  <aside>Opening slide. This is the working prototype, not a template.</aside>
 </section>
 
-<section class="light">
-  <h2>It answers four questions, instantly</h2>
-  <div class="qgrid"><div class="qcard"><h3>What are we posting?</h3><p>A calendar of every post, with the caption and script attached.</p></div><div class="qcard"><h3>What needs to be created?</h3><p>A clear list of what still has to be filmed, shot or written.</p></div><div class="qcard"><h3>Who are we waiting on?</h3><p>Every job has a name and a due date on it. No chasing.</p></div><div class="qcard"><h3>Is our content working?</h3><p>Real numbers, plus plain-English advice on what to do next.</p></div></div>
-  <p class="note">Everything else in the app exists to answer one of these four.</p>
+<section id="four" data-transition="fade" style="background:#FFFFFF; color:#0B1B33; font-family:Inter, 'Helvetica Neue', Arial, sans-serif">
+  <h2 style="margin:0; position:absolute; left:128px; top:78px; width:1664px; font-size:64px; font-weight:800; line-height:1.05; letter-spacing:-1.5px">It answers four questions, instantly</h2>
+  <div style="position:absolute; left:128px; top:222px; width:816px; height:250px; background:#F3F6FA; border:1px solid #DDE4EC; border-left:10px solid #F6A21E; border-radius:16px; padding:44px">
+    <h3 style="margin:0; font-size:42px; font-weight:800; line-height:1.1">What are we posting?</h3>
+    <p style="margin:0; position:absolute; left:44px; top:120px; width:728px; font-size:27px; color:#46586F; line-height:1.4">A calendar of every post, with the caption and script attached.</p>
+  </div><div style="position:absolute; left:976px; top:222px; width:816px; height:250px; background:#F3F6FA; border:1px solid #DDE4EC; border-left:10px solid #F6A21E; border-radius:16px; padding:44px">
+    <h3 style="margin:0; font-size:42px; font-weight:800; line-height:1.1">What needs to be created?</h3>
+    <p style="margin:0; position:absolute; left:44px; top:120px; width:728px; font-size:27px; color:#46586F; line-height:1.4">A clear list of what still has to be filmed, shot or written.</p>
+  </div><div style="position:absolute; left:128px; top:508px; width:816px; height:250px; background:#F3F6FA; border:1px solid #DDE4EC; border-left:10px solid #F6A21E; border-radius:16px; padding:44px">
+    <h3 style="margin:0; font-size:42px; font-weight:800; line-height:1.1">Who are we waiting on?</h3>
+    <p style="margin:0; position:absolute; left:44px; top:120px; width:728px; font-size:27px; color:#46586F; line-height:1.4">Every job has a name and a due date on it. No chasing.</p>
+  </div><div style="position:absolute; left:976px; top:508px; width:816px; height:250px; background:#F3F6FA; border:1px solid #DDE4EC; border-left:10px solid #F6A21E; border-radius:16px; padding:44px">
+    <h3 style="margin:0; font-size:42px; font-weight:800; line-height:1.1">Is our content working?</h3>
+    <p style="margin:0; position:absolute; left:44px; top:120px; width:728px; font-size:27px; color:#46586F; line-height:1.4">Real numbers, plus plain-English advice on what to do next.</p>
+  </div>
+  <p style="margin:0; position:absolute; left:128px; top:860px; width:1664px; font-size:26px; color:#8494A8">Everything else in the app exists to answer one of these four.</p>
+  <aside>If Brian remembers nothing else, it should be these four.</aside>
 </section>
 
-<section class="light" id="dashboard">
-  <h2>The Dashboard</h2>
-  <p class="lede">Open it and see what matters: this month's numbers, and exactly who owes what.</p>
-  <div class="shot"><svg viewBox="0 0 360 680" style="width:100%;max-width:310px;height:auto;display:block;margin:0 auto"><rect x="0" y="0" width="360" height="680" rx="34" fill="#0B1B33"/>
-<rect x="14" y="12" width="332" height="656" rx="26" fill="#F3F6FA"/>
-<rect x="14" y="12" width="332" height="62" rx="0" fill="#FFFFFF"/>
-<rect x="14" y="72" width="332" height="3" rx="0" fill="#F6A21E"/>
-<rect x="30" y="32" width="22" height="22" rx="5" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="62" y="32" width="216" height="22" rx="11" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
-<text x="72" y="47" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
-<rect x="306" y="30" width="26" height="26" rx="6" fill="#0E2647"/>
-<text x="30" y="104" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#0B1B33" text-anchor="start">Dashboard</text>
-<rect x="30" y="124" width="146" height="72" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="44" y="148" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Content needed</text>
-<text x="44" y="178" font-family="Inter,sans-serif" font-size="24" font-weight="800" fill="#96590A" text-anchor="start">3</text>
-<rect x="186" y="124" width="146" height="72" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="200" y="148" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Scheduled</text>
-<text x="200" y="178" font-family="Inter,sans-serif" font-size="24" font-weight="800" fill="#1D6FC4" text-anchor="start">6</text>
-<rect x="30" y="208" width="302" height="206" rx="10" fill="#FFFFFF" stroke="#F0DCB4" stroke-width="1"/>
-<text x="46" y="236" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#96590A" text-anchor="start">Action required</text>
-<rect x="30" y="248" width="302" height="1" rx="0" fill="#DDE4EC"/>
-<text x="46" y="272" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#96590A" text-anchor="start">Record</text>
-<text x="99.6" y="272" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#0B1B33" text-anchor="start">3 Signs Your AC...</text>
-<text x="46" y="290" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Brian · Sep 8</text>
-<rect x="30" y="303" width="302" height="1" rx="0" fill="#DDE4EC"/>
-<text x="46" y="327" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#96590A" text-anchor="start">Upload</text>
-<text x="99.6" y="327" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#0B1B33" text-anchor="start">Install Photos</text>
-<text x="46" y="345" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Field Team · Sep 9</text>
-<rect x="30" y="358" width="302" height="1" rx="0" fill="#DDE4EC"/>
-<text x="46" y="382" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#96590A" text-anchor="start">Approve</text>
-<text x="107.19999999999999" y="382" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#0B1B33" text-anchor="start">Fall Campaign</text>
-<text x="46" y="400" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Chris · Sep 10</text>
-<rect x="30" y="413" width="302" height="1" rx="0" fill="#DDE4EC"/>
-<text x="30" y="442" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#0B1B33" text-anchor="start">Upcoming content</text>
-<rect x="30" y="456" width="302" height="56" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="42" y="466" width="36" height="36" rx="6" fill="#1D6FC4"/>
-<text x="90" y="482" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#0B1B33" text-anchor="start">Why Your Energy Bill...</text>
-<text x="90" y="498" font-family="Inter,sans-serif" font-size="10.5" font-weight="400" fill="#8494A8" text-anchor="start">Reel · Sep 11</text>
-<rect x="30" y="522" width="302" height="56" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="42" y="532" width="36" height="36" rx="6" fill="#17845C"/>
-<text x="90" y="548" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#0B1B33" text-anchor="start">Fall Maintenance List</text>
-<text x="90" y="564" font-family="Inter,sans-serif" font-size="10.5" font-weight="400" fill="#8494A8" text-anchor="start">Carousel · Sep 15</text>
-<rect x="30" y="600" width="302" height="36" rx="8" fill="#F6A21E"/>
-<text x="181" y="624" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#0E2647" text-anchor="middle">+ Create content</text>
+<section id="dashboard" data-transition="fade" style="background:#F3F6FA; color:#0B1B33; font-family:Inter, 'Helvetica Neue', Arial, sans-serif">
+  <h2 style="margin:0; position:absolute; left:128px; top:54px; width:1664px; font-size:52px; font-weight:800; line-height:1.05; letter-spacing:-1px">The Dashboard</h2>
+  <p style="margin:0; position:absolute; left:128px; top:128px; width:1600px; font-size:28px; font-weight:400; color:#46586F; line-height:1.3">Open it and see what matters: this month's numbers, and exactly who owes what.</p>
+  <div style="position:absolute; left:220px; top:218px; width:1480px; height:710px"><svg aria-label="Dashboard on desktop and phone" viewBox="0 0 1480 710" style="width:1480px; height:710px"><rect x="0" y="0" width="1120" height="700" rx="14" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1" y="1" width="1118" height="40" rx="0" fill="#F3F6FA"/>
+<circle cx="24" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="44" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="64" cy="21" r="5" fill="#CFD8E3"/>
+<rect x="110" y="11" width="300" height="20" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="126" y="25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">delco-social-hub.app</text>
+<rect x="1" y="41" width="210" height="658" rx="0" fill="#0E2647"/>
+<rect x="18" y="58" width="74" height="30" rx="4" fill="#0E2647" stroke="#F6A21E" stroke-width="2"/>
+<text x="55" y="73" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">DELCO</text>
+<text x="55" y="83" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="4.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">HEATING &amp; COOLING</text>
+<rect x="12" y="104" width="188" height="28" rx="6" fill="#1B3A66"/>
+<rect x="12" y="104" width="3" height="28" rx="0" fill="#F6A21E"/>
+<text x="28" y="122" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="start">Dashboard</text>
+<text x="28" y="156" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Planner</text>
+<text x="28" y="190" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Create with AI</text>
+<text x="28" y="224" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Requests</text>
+<text x="28" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Library</text>
+<text x="28" y="292" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Analytics</text>
+<text x="28" y="326" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Brand Hub</text>
+<text x="28" y="360" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Settings</text>
+<rect x="12" y="600" width="188" height="54" rx="8" fill="#1B3A66"/>
+<text x="28" y="622" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">Ask LUNA</text>
+<text x="28" y="640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#93A6C2" text-anchor="start">What should we post?</text>
+<rect x="211" y="41" width="909" height="49" rx="0" fill="#FFFFFF"/>
+<rect x="232" y="54" width="300" height="24" rx="12" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="248" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Search content and media</text>
+<rect x="980" y="54" width="120" height="24" rx="6" fill="#0E2647"/>
+<text x="1040" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ask LUNA</text>
+<rect x="211" y="87" width="909" height="3" rx="0" fill="#F6A21E"/>
+<rect x="211" y="90" width="909" height="609" rx="0" fill="#F3F6FA"/>
+<text x="240" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#0B1B33" text-anchor="start">Good afternoon, Brian</text>
+<text x="240" y="152" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">Here's what's happening with DELCO's content.</text>
+<rect x="240" y="172" width="132" height="64" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="252" y="192" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Posts this month</text>
+<text x="252" y="216" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="800" fill="#0B1B33" text-anchor="start">18</text>
+<rect x="380" y="172" width="132" height="64" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="392" y="192" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Scheduled</text>
+<text x="392" y="216" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="800" fill="#1D6FC4" text-anchor="start">6</text>
+<rect x="520" y="172" width="132" height="64" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="532" y="192" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Awaiting approval</text>
+<text x="532" y="216" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="800" fill="#96590A" text-anchor="start">2</text>
+<rect x="660" y="172" width="132" height="64" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="672" y="192" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Content needed</text>
+<text x="672" y="216" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="800" fill="#96590A" text-anchor="start">3</text>
+<rect x="800" y="172" width="132" height="64" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="812" y="192" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Total reach</text>
+<text x="812" y="216" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="800" fill="#0B1B33" text-anchor="start">94.2K</text>
+<rect x="940" y="172" width="132" height="64" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="952" y="192" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Engagement</text>
+<text x="952" y="216" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="800" fill="#17845C" text-anchor="start">6.4%</text>
+<rect x="240" y="256" width="840" height="190" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="240" y="256" width="840" height="34" rx="8" fill="#FFFFFF"/>
+<text x="258" y="278" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#96590A" text-anchor="start">Action required</text>
+<text x="1060" y="278" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="end">3 items</text>
+<rect x="240" y="290" width="840" height="1" rx="0" fill="#DDE4EC"/>
+<text x="258" y="316" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#96590A" text-anchor="start">Record</text>
+<text x="310" y="316" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#0B1B33" text-anchor="start">3 Signs Your AC Needs Service</text>
+<text x="258" y="334" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#8494A8" text-anchor="start">Brian  ·  Due Sep 8</text>
+<rect x="900" y="304" width="150" height="22" rx="11" fill="#FEF3E0"/>
+<text x="975" y="319" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#96590A" text-anchor="middle">Content Needed</text>
+<rect x="240" y="342" width="840" height="1" rx="0" fill="#DDE4EC"/>
+<text x="258" y="368" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#96590A" text-anchor="start">Upload</text>
+<text x="310" y="368" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#0B1B33" text-anchor="start">Recent Installation Photos</text>
+<text x="258" y="386" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#8494A8" text-anchor="start">Field Team  ·  Due Sep 9</text>
+<rect x="900" y="356" width="150" height="22" rx="11" fill="#FEF3E0"/>
+<text x="975" y="371" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#96590A" text-anchor="middle">In Production</text>
+<rect x="240" y="394" width="840" height="1" rx="0" fill="#DDE4EC"/>
+<text x="258" y="420" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#96590A" text-anchor="start">Approve</text>
+<text x="317" y="420" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#0B1B33" text-anchor="start">Fall Maintenance Campaign</text>
+<text x="258" y="438" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#8494A8" text-anchor="start">Chris  ·  Due Sep 10</text>
+<rect x="900" y="408" width="150" height="22" rx="11" fill="#FEF3E0"/>
+<text x="975" y="423" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#96590A" text-anchor="middle">Awaiting Approval</text>
+<rect x="240" y="446" width="840" height="1" rx="0" fill="#DDE4EC"/>
+<rect x="240" y="466" width="410" height="210" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="258" y="492" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#0B1B33" text-anchor="start">Upcoming content</text>
+<rect x="258" y="510" width="40" height="40" rx="6" fill="#1D6FC4"/>
+<text x="310" y="528" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#0B1B33" text-anchor="start">Why Your Energy Bill Keeps Climbing</text>
+<text x="310" y="543" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Reel · Sep 11</text>
+<rect x="258" y="560" width="40" height="40" rx="6" fill="#17845C"/>
+<text x="310" y="578" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#0B1B33" text-anchor="start">Fall HVAC Maintenance Checklist</text>
+<text x="310" y="593" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Carousel · Sep 15</text>
+<rect x="258" y="610" width="40" height="40" rx="6" fill="#1D6FC4"/>
+<text x="310" y="628" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#0B1B33" text-anchor="start">Is Your System Ready for Winter?</text>
+<text x="310" y="643" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Graphic · Sep 18</text>
+<rect x="670" y="466" width="410" height="210" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="688" y="492" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#0B1B33" text-anchor="start">Recent performance</text>
+<polyline points="690,640 730,620 770,645 810,580 850,600 890,545 930,565 970,520 1010,540 1050,500" fill="none" stroke="#1D6FC4" stroke-width="2.5"/>
+<rect x="688" y="668" width="374" height="1" rx="0" fill="#DDE4EC"/>
+<rect x="1180" y="10" width="280" height="580" rx="30" fill="#0B1B33"/>
+<rect x="1190" y="20" width="260" height="560" rx="22" fill="#F3F6FA"/>
+<rect x="1190" y="20" width="260" height="54" rx="0" fill="#FFFFFF"/>
+<rect x="1190" y="71" width="260" height="3" rx="0" fill="#F6A21E"/>
+<rect x="1204" y="38" width="16" height="16" rx="3" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1228" y="38" width="150" height="16" rx="8" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1236" y="50" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
+<rect x="1412" y="36" width="22" height="20" rx="5" fill="#0E2647"/>
+<text x="1204" y="96" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1B33" text-anchor="start">Dashboard</text>
+<rect x="1204" y="112" width="116" height="54" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1214" y="132" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Content needed</text>
+<text x="1214" y="156" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="800" fill="#96590A" text-anchor="start">3</text>
+<rect x="1330" y="112" width="104" height="54" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1340" y="132" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Scheduled</text>
+<text x="1340" y="156" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="800" fill="#1D6FC4" text-anchor="start">6</text>
+<rect x="1204" y="178" width="230" height="150" rx="8" fill="#FFFFFF" stroke="#F0DCB4" stroke-width="1"/>
+<text x="1216" y="200" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#96590A" text-anchor="start">Action required</text>
+<rect x="1204" y="210" width="230" height="1" rx="0" fill="#DDE4EC"/>
+<text x="1216" y="230" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="700" fill="#96590A" text-anchor="start">Record</text>
+<text x="1258" y="230" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">3 Signs Your AC...</text>
+<text x="1216" y="244" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#8494A8" text-anchor="start">Brian · Sep 8</text>
+<rect x="1204" y="256" width="230" height="1" rx="0" fill="#DDE4EC"/>
+<text x="1216" y="276" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="700" fill="#96590A" text-anchor="start">Upload</text>
+<text x="1258" y="276" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Install Photos</text>
+<text x="1216" y="290" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#8494A8" text-anchor="start">Field Team · Sep 9</text>
+<rect x="1204" y="302" width="230" height="1" rx="0" fill="#DDE4EC"/>
+<text x="1216" y="322" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="700" fill="#96590A" text-anchor="start">Approve</text>
+<text x="1264" y="322" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Fall Campaign</text>
+<text x="1216" y="336" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#8494A8" text-anchor="start">Chris · Sep 10</text>
+<rect x="1204" y="348" width="230" height="1" rx="0" fill="#DDE4EC"/>
+<text x="1204" y="352" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0B1B33" text-anchor="start">Upcoming content</text>
+<rect x="1204" y="364" width="230" height="50" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1212" y="372" width="34" height="34" rx="5" fill="#1D6FC4"/>
+<text x="1256" y="386" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Why Your Energy Bill...</text>
+<text x="1256" y="400" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#8494A8" text-anchor="start">Reel · Sep 11</text>
+<rect x="1204" y="422" width="230" height="50" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1212" y="430" width="34" height="34" rx="5" fill="#17845C"/>
+<text x="1256" y="444" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Fall Maintenance List</text>
+<text x="1256" y="458" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#8494A8" text-anchor="start">Carousel · Sep 15</text>
+<rect x="1204" y="486" width="230" height="32" rx="6" fill="#F6A21E"/>
+<text x="1319" y="507" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0E2647" text-anchor="middle">+ Create content</text>
+<rect x="1204" y="524" width="230" height="32" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1319" y="545" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#0B1B33" text-anchor="middle">Upload media</text>
 </svg></div>
-  <ul class="points"><li>The action list is the first thing on the screen</li><li>Every job shows a name and a due date</li><li>Tap any item to see its full history</li></ul>
+  <p style="margin:0; position:absolute; left:128px; top:960px; width:1664px; font-size:26px; color:#8494A8; line-height:1.3">Works the same on a phone — the action list is the first thing you see.</p>
+  
 </section>
 
-<section class="light" id="planner">
-  <h2>The Content Planner</h2>
-  <p class="lede">A calendar of everything going out, with the script and caption inside each item.</p>
-  <div class="shot"><svg viewBox="0 0 360 680" style="width:100%;max-width:310px;height:auto;display:block;margin:0 auto"><rect x="0" y="0" width="360" height="680" rx="34" fill="#0B1B33"/>
-<rect x="14" y="12" width="332" height="656" rx="26" fill="#F3F6FA"/>
-<rect x="14" y="12" width="332" height="62" rx="0" fill="#FFFFFF"/>
-<rect x="14" y="72" width="332" height="3" rx="0" fill="#F6A21E"/>
-<rect x="30" y="32" width="22" height="22" rx="5" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="62" y="32" width="216" height="22" rx="11" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
-<text x="72" y="47" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
-<rect x="306" y="30" width="26" height="26" rx="6" fill="#0E2647"/>
-<text x="30" y="104" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#0B1B33" text-anchor="start">Content Planner</text>
-<text x="30" y="126" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">List view</text>
-<rect x="30" y="140" width="302" height="60" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="42" y="151" width="38" height="38" rx="6" fill="#F6A21E"/>
-<text x="92" y="168" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#0B1B33" text-anchor="start">3 Signs Your AC Needs...</text>
-<text x="92" y="185" font-family="Inter,sans-serif" font-size="10.5" font-weight="400" fill="#8494A8" text-anchor="start">Reel · Sep 8</text>
-<rect x="30" y="210" width="302" height="60" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="42" y="221" width="38" height="38" rx="6" fill="#C2610A"/>
-<text x="92" y="238" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#0B1B33" text-anchor="start">Recent Sayreville Install</text>
-<text x="92" y="255" font-family="Inter,sans-serif" font-size="10.5" font-weight="400" fill="#8494A8" text-anchor="start">Post · Sep 9</text>
-<rect x="30" y="280" width="302" height="60" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="42" y="291" width="38" height="38" rx="6" fill="#1D6FC4"/>
-<text x="92" y="308" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#0B1B33" text-anchor="start">Why Your Energy Bill...</text>
-<text x="92" y="325" font-family="Inter,sans-serif" font-size="10.5" font-weight="400" fill="#8494A8" text-anchor="start">Reel · Sep 11</text>
-<rect x="30" y="350" width="302" height="60" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="42" y="361" width="38" height="38" rx="6" fill="#17845C"/>
-<text x="92" y="378" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#0B1B33" text-anchor="start">Fall Maintenance List</text>
-<text x="92" y="395" font-family="Inter,sans-serif" font-size="10.5" font-weight="400" fill="#8494A8" text-anchor="start">Carousel · Sep 15</text>
-<rect x="30" y="420" width="302" height="60" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="42" y="431" width="38" height="38" rx="6" fill="#0E2647"/>
-<text x="92" y="448" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#0B1B33" text-anchor="start">Technician Tuesday</text>
-<text x="92" y="465" font-family="Inter,sans-serif" font-size="10.5" font-weight="400" fill="#8494A8" text-anchor="start">Story · Sep 15</text>
-<rect x="30" y="490" width="302" height="60" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="42" y="501" width="38" height="38" rx="6" fill="#C2610A"/>
-<text x="92" y="518" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#0B1B33" text-anchor="start">Ready for Winter?</text>
-<text x="92" y="535" font-family="Inter,sans-serif" font-size="10.5" font-weight="400" fill="#8494A8" text-anchor="start">Graphic · Sep 18</text>
-<rect x="30" y="560" width="302" height="60" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="42" y="571" width="38" height="38" rx="6" fill="#1D6FC4"/>
-<text x="92" y="588" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#0B1B33" text-anchor="start">Meet the DELCO Team</text>
-<text x="92" y="605" font-family="Inter,sans-serif" font-size="10.5" font-weight="400" fill="#8494A8" text-anchor="start">Post · Sep 22</text>
+<section id="planner" data-transition="fade" style="background:#F3F6FA; color:#0B1B33; font-family:Inter, 'Helvetica Neue', Arial, sans-serif">
+  <h2 style="margin:0; position:absolute; left:128px; top:54px; width:1664px; font-size:52px; font-weight:800; line-height:1.05; letter-spacing:-1px">The Content Planner</h2>
+  <p style="margin:0; position:absolute; left:128px; top:128px; width:1600px; font-size:28px; font-weight:400; color:#46586F; line-height:1.3">A calendar of everything going out, with the script and caption inside each item.</p>
+  <div style="position:absolute; left:220px; top:218px; width:1480px; height:710px"><svg aria-label="Content planner on desktop and phone" viewBox="0 0 1480 710" style="width:1480px; height:710px"><rect x="0" y="0" width="1120" height="700" rx="14" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1" y="1" width="1118" height="40" rx="0" fill="#F3F6FA"/>
+<circle cx="24" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="44" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="64" cy="21" r="5" fill="#CFD8E3"/>
+<rect x="110" y="11" width="300" height="20" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="126" y="25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">delco-social-hub.app</text>
+<rect x="1" y="41" width="210" height="658" rx="0" fill="#0E2647"/>
+<rect x="18" y="58" width="74" height="30" rx="4" fill="#0E2647" stroke="#F6A21E" stroke-width="2"/>
+<text x="55" y="73" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">DELCO</text>
+<text x="55" y="83" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="4.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">HEATING &amp; COOLING</text>
+<text x="28" y="122" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Dashboard</text>
+<rect x="12" y="138" width="188" height="28" rx="6" fill="#1B3A66"/>
+<rect x="12" y="138" width="3" height="28" rx="0" fill="#F6A21E"/>
+<text x="28" y="156" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="start">Content Planner</text>
+<text x="28" y="190" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Create with AI</text>
+<text x="28" y="224" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Requests</text>
+<text x="28" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Library</text>
+<text x="28" y="292" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Analytics</text>
+<text x="28" y="326" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Brand Hub</text>
+<text x="28" y="360" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Settings</text>
+<rect x="12" y="600" width="188" height="54" rx="8" fill="#1B3A66"/>
+<text x="28" y="622" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">Ask LUNA</text>
+<text x="28" y="640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#93A6C2" text-anchor="start">What should we post?</text>
+<rect x="211" y="41" width="909" height="49" rx="0" fill="#FFFFFF"/>
+<rect x="232" y="54" width="300" height="24" rx="12" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="248" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Search content and media</text>
+<rect x="980" y="54" width="120" height="24" rx="6" fill="#0E2647"/>
+<text x="1040" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ask LUNA</text>
+<rect x="211" y="87" width="909" height="3" rx="0" fill="#F6A21E"/>
+<rect x="211" y="90" width="909" height="609" rx="0" fill="#F3F6FA"/>
+<text x="240" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#0B1B33" text-anchor="start">Content planner</text>
+<text x="240" y="152" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">September 2026 — 12 items planned, 3 still need content.</text>
+<rect x="240" y="172" width="840" height="504" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="258" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#8494A8" text-anchor="start">Sun</text>
+<text x="378" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#8494A8" text-anchor="start">Mon</text>
+<text x="498" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#8494A8" text-anchor="start">Tue</text>
+<text x="618" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#8494A8" text-anchor="start">Wed</text>
+<text x="738" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#8494A8" text-anchor="start">Thu</text>
+<text x="858" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#8494A8" text-anchor="start">Fri</text>
+<text x="978" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#8494A8" text-anchor="start">Sat</text>
+<rect x="240" y="206" width="840" height="1" rx="0" fill="#DDE4EC"/>
+<rect x="246" y="212" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="254" y="228" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">1</text>
+<rect x="366" y="212" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="374" y="228" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">2</text>
+<rect x="486" y="212" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="494" y="228" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">3</text>
+<rect x="492" y="236" width="102" height="30" rx="4" fill="#FEF3E0"/>
+<rect x="492" y="236" width="3" height="30" rx="0" fill="#F6A21E"/>
+<text x="500" y="250" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#0B1B33" text-anchor="start">AC Signs</text>
+<text x="500" y="262" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#F6A21E" text-anchor="start">6:30 PM</text>
+<rect x="606" y="212" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="614" y="228" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">4</text>
+<rect x="612" y="236" width="102" height="30" rx="4" fill="#FEF3E0"/>
+<rect x="612" y="236" width="3" height="30" rx="0" fill="#F6A21E"/>
+<text x="620" y="250" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#0B1B33" text-anchor="start">Sayreville</text>
+<text x="620" y="262" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#F6A21E" text-anchor="start">6:30 PM</text>
+<rect x="726" y="212" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="734" y="228" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">5</text>
+<rect x="846" y="212" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="854" y="228" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">6</text>
+<rect x="852" y="236" width="102" height="30" rx="4" fill="#E9F1FB"/>
+<rect x="852" y="236" width="3" height="30" rx="0" fill="#1D6FC4"/>
+<text x="860" y="250" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#0B1B33" text-anchor="start">Energy Bill</text>
+<text x="860" y="262" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#1D6FC4" text-anchor="start">6:30 PM</text>
+<rect x="966" y="212" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="974" y="228" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">7</text>
+<rect x="246" y="326" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="254" y="342" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">8</text>
+<rect x="366" y="326" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="374" y="342" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">9</text>
+<rect x="486" y="326" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="494" y="342" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">10</text>
+<rect x="606" y="326" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="614" y="342" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">11</text>
+<rect x="726" y="326" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="734" y="342" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">12</text>
+<rect x="846" y="326" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="854" y="342" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">13</text>
+<rect x="852" y="350" width="102" height="30" rx="4" fill="#E8F5EF"/>
+<rect x="852" y="350" width="3" height="30" rx="0" fill="#17845C"/>
+<text x="860" y="364" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#0B1B33" text-anchor="start">Winter</text>
+<text x="860" y="376" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#17845C" text-anchor="start">6:30 PM</text>
+<rect x="966" y="326" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="974" y="342" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">14</text>
+<rect x="246" y="440" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="254" y="456" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">15</text>
+<rect x="366" y="440" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="374" y="456" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">16</text>
+<rect x="486" y="440" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="494" y="456" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">17</text>
+<rect x="492" y="464" width="102" height="30" rx="4" fill="#F1F3F7"/>
+<rect x="492" y="464" width="3" height="30" rx="0" fill="#8494A8"/>
+<text x="500" y="478" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#0B1B33" text-anchor="start">Team Photo</text>
+<text x="500" y="490" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#8494A8" text-anchor="start">6:30 PM</text>
+<rect x="606" y="440" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="614" y="456" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">18</text>
+<rect x="726" y="440" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="734" y="456" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">19</text>
+<rect x="846" y="440" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="854" y="456" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">20</text>
+<rect x="852" y="464" width="102" height="30" rx="4" fill="#FEF3E0"/>
+<rect x="852" y="464" width="3" height="30" rx="0" fill="#F6A21E"/>
+<text x="860" y="478" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#0B1B33" text-anchor="start">Christmas</text>
+<text x="860" y="490" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#F6A21E" text-anchor="start">6:30 PM</text>
+<rect x="966" y="440" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="974" y="456" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">21</text>
+<rect x="246" y="554" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="254" y="570" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">22</text>
+<rect x="366" y="554" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="374" y="570" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">23</text>
+<rect x="486" y="554" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="494" y="570" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">24</text>
+<rect x="492" y="578" width="102" height="30" rx="4" fill="#FEF3E0"/>
+<rect x="492" y="578" width="3" height="30" rx="0" fill="#F6A21E"/>
+<text x="500" y="592" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#0B1B33" text-anchor="start">Emergency Heat</text>
+<text x="500" y="604" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#F6A21E" text-anchor="start">6:30 PM</text>
+<rect x="606" y="554" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="614" y="570" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">25</text>
+<rect x="726" y="554" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="734" y="570" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">26</text>
+<rect x="846" y="554" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="854" y="570" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">27</text>
+<rect x="966" y="554" width="114" height="108" rx="4" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="974" y="570" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#8494A8" text-anchor="start">28</text>
+<rect x="1180" y="10" width="280" height="580" rx="30" fill="#0B1B33"/>
+<rect x="1190" y="20" width="260" height="560" rx="22" fill="#F3F6FA"/>
+<rect x="1190" y="20" width="260" height="54" rx="0" fill="#FFFFFF"/>
+<rect x="1190" y="71" width="260" height="3" rx="0" fill="#F6A21E"/>
+<rect x="1204" y="38" width="16" height="16" rx="3" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1228" y="38" width="150" height="16" rx="8" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1236" y="50" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
+<rect x="1412" y="36" width="22" height="20" rx="5" fill="#0E2647"/>
+<text x="1204" y="96" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1B33" text-anchor="start">Content Planner</text>
+<text x="1204" y="116" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#8494A8" text-anchor="start">List view</text>
+<rect x="1204" y="128" width="230" height="54" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1212" y="136" width="38" height="38" rx="5" fill="#F6A21E"/>
+<text x="1260" y="152" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">3 Signs Your AC Needs...</text>
+<text x="1260" y="166" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#8494A8" text-anchor="start">Reel · Sep 8</text>
+<rect x="1204" y="190" width="230" height="54" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1212" y="198" width="38" height="38" rx="5" fill="#F6A21E"/>
+<text x="1260" y="214" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Recent Sayreville Install</text>
+<text x="1260" y="228" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#8494A8" text-anchor="start">Post · Sep 9</text>
+<rect x="1204" y="252" width="230" height="54" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1212" y="260" width="38" height="38" rx="5" fill="#1D6FC4"/>
+<text x="1260" y="276" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Why Your Energy Bill...</text>
+<text x="1260" y="290" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#8494A8" text-anchor="start">Reel · Sep 11</text>
+<rect x="1204" y="314" width="230" height="54" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1212" y="322" width="38" height="38" rx="5" fill="#46586F"/>
+<text x="1260" y="338" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Fall Maintenance List</text>
+<text x="1260" y="352" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#8494A8" text-anchor="start">Carousel · Sep 15</text>
+<rect x="1204" y="376" width="230" height="54" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1212" y="384" width="38" height="38" rx="5" fill="#F6A21E"/>
+<text x="1260" y="400" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Technician Tuesday</text>
+<text x="1260" y="414" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#8494A8" text-anchor="start">Story · Sep 15</text>
+<rect x="1204" y="438" width="230" height="54" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1212" y="446" width="38" height="38" rx="5" fill="#17845C"/>
+<text x="1260" y="462" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Ready for Winter?</text>
+<text x="1260" y="476" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#8494A8" text-anchor="start">Graphic · Sep 18</text>
+<rect x="1204" y="500" width="230" height="54" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1212" y="508" width="38" height="38" rx="5" fill="#8494A8"/>
+<text x="1260" y="524" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Meet the DELCO Team</text>
+<text x="1260" y="538" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#8494A8" text-anchor="start">Post · Sep 22</text>
 </svg></div>
-  <ul class="points"><li>Month, week or list view</li><li>Tap a post to read its brief</li><li>On a phone it opens as a simple list</li></ul>
+  <p style="margin:0; position:absolute; left:128px; top:960px; width:1664px; font-size:26px; color:#8494A8; line-height:1.3">Drag a post to a different day to reschedule it. On a phone it becomes a simple list.</p>
+  
 </section>
 
-<section class="light" id="ai">
-  <h2>Create with AI</h2>
-  <p class="lede">Describe what you want and it writes the post or makes the graphic, already on brand.</p>
-  <div class="shot"><svg viewBox="0 0 360 680" style="width:100%;max-width:310px;height:auto;display:block;margin:0 auto"><rect x="0" y="0" width="360" height="680" rx="34" fill="#0B1B33"/>
-<rect x="14" y="12" width="332" height="656" rx="26" fill="#F3F6FA"/>
-<rect x="14" y="12" width="332" height="62" rx="0" fill="#FFFFFF"/>
-<rect x="14" y="72" width="332" height="3" rx="0" fill="#F6A21E"/>
-<rect x="30" y="32" width="22" height="22" rx="5" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="62" y="32" width="216" height="22" rx="11" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
-<text x="72" y="47" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
-<rect x="306" y="30" width="26" height="26" rx="6" fill="#0E2647"/>
-<text x="30" y="104" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#0B1B33" text-anchor="start">Create with AI</text>
-<rect x="30" y="124" width="302" height="52" rx="8" fill="#FBFCFD" stroke="#DDE4EC" stroke-width="1"/>
-<text x="44" y="154" font-family="Inter,sans-serif" font-size="11.5" font-weight="400" fill="#8494A8" text-anchor="start">Create a Christmas graphic</text>
-<rect x="30" y="186" width="150" height="30" rx="15" fill="#E8F5EF"/>
-<text x="105" y="206" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#17845C" text-anchor="middle">Brand Lock: ON</text>
-<rect x="232" y="186" width="100" height="30" rx="8" fill="#F6A21E"/>
-<text x="282" y="206" font-family="Inter,sans-serif" font-size="11.5" font-weight="700" fill="#0E2647" text-anchor="middle">Generate</text>
-<rect x="30" y="230" width="302" height="302" rx="10" fill="#0E2647"/>
-<image href="" data-art="logo" x="115" y="244" width="132" height="80"/>
-<text x="181" y="352" font-family="Inter,sans-serif" font-size="19" font-weight="800" fill="#FFFFFF" text-anchor="middle">MERRY CHRISTMAS</text>
-<text x="181" y="374" font-family="Inter,sans-serif" font-size="19" font-weight="800" fill="#FFFFFF" text-anchor="middle">FROM THE DELCO FAMILY</text>
-<image href="" data-art="dog" x="140" y="384" width="82" height="118"/>
-<rect x="30" y="504" width="302" height="28" rx="0" fill="#F6A21E"/>
-<text x="181" y="523" font-family="Inter,sans-serif" font-size="12" font-weight="800" fill="#0E2647" text-anchor="middle">(732) 360-6201</text>
-<rect x="30" y="548" width="146" height="34" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="103" y="570" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#46586F" text-anchor="middle">Regenerate</text>
-<rect x="186" y="548" width="146" height="34" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="259" y="570" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#46586F" text-anchor="middle">Save</text>
-<rect x="30" y="592" width="302" height="36" rx="8" fill="#F6A21E"/>
-<text x="181" y="616" font-family="Inter,sans-serif" font-size="12.5" font-weight="700" fill="#0E2647" text-anchor="middle">Send for approval</text>
+<section id="ai" data-transition="fade" style="background:#F3F6FA; color:#0B1B33; font-family:Inter, 'Helvetica Neue', Arial, sans-serif">
+  <h2 style="margin:0; position:absolute; left:128px; top:54px; width:1664px; font-size:52px; font-weight:800; line-height:1.05; letter-spacing:-1px">Create with AI</h2>
+  <p style="margin:0; position:absolute; left:128px; top:128px; width:1600px; font-size:28px; font-weight:400; color:#46586F; line-height:1.3">Describe what you want and it writes the post or makes the graphic, already on brand.</p>
+  <div style="position:absolute; left:220px; top:218px; width:1480px; height:710px"><svg aria-label="AI studio on desktop and phone" viewBox="0 0 1480 710" style="width:1480px; height:710px"><rect x="0" y="0" width="1120" height="700" rx="14" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1" y="1" width="1118" height="40" rx="0" fill="#F3F6FA"/>
+<circle cx="24" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="44" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="64" cy="21" r="5" fill="#CFD8E3"/>
+<rect x="110" y="11" width="300" height="20" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="126" y="25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">delco-social-hub.app</text>
+<rect x="1" y="41" width="210" height="658" rx="0" fill="#0E2647"/>
+<rect x="18" y="58" width="74" height="30" rx="4" fill="#0E2647" stroke="#F6A21E" stroke-width="2"/>
+<text x="55" y="73" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">DELCO</text>
+<text x="55" y="83" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="4.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">HEATING &amp; COOLING</text>
+<text x="28" y="122" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Dashboard</text>
+<text x="28" y="156" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Planner</text>
+<rect x="12" y="172" width="188" height="28" rx="6" fill="#1B3A66"/>
+<rect x="12" y="172" width="3" height="28" rx="0" fill="#F6A21E"/>
+<text x="28" y="190" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="start">Create with AI</text>
+<text x="28" y="224" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Requests</text>
+<text x="28" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Library</text>
+<text x="28" y="292" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Analytics</text>
+<text x="28" y="326" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Brand Hub</text>
+<text x="28" y="360" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Settings</text>
+<rect x="12" y="600" width="188" height="54" rx="8" fill="#1B3A66"/>
+<text x="28" y="622" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">Ask LUNA</text>
+<text x="28" y="640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#93A6C2" text-anchor="start">What should we post?</text>
+<rect x="211" y="41" width="909" height="49" rx="0" fill="#FFFFFF"/>
+<rect x="232" y="54" width="300" height="24" rx="12" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="248" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Search content and media</text>
+<rect x="980" y="54" width="120" height="24" rx="6" fill="#0E2647"/>
+<text x="1040" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ask LUNA</text>
+<rect x="211" y="87" width="909" height="3" rx="0" fill="#F6A21E"/>
+<rect x="211" y="90" width="909" height="609" rx="0" fill="#F3F6FA"/>
+<text x="240" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#0B1B33" text-anchor="start">Create with DELCO AI</text>
+<text x="240" y="152" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">Turn an idea into ready-to-post DELCO content.</text>
+<rect x="240" y="172" width="840" height="150" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="258" y="190" width="73" height="24" rx="6" fill="#0E2647" stroke="#DDE4EC" stroke-width="1"/>
+<text x="294.5" y="206" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Graphic</text>
+<rect x="339" y="190" width="101" height="24" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="389.5" y="206" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Social Post</text>
+<rect x="448" y="190" width="87" height="24" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="491.5" y="206" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Reel Idea</text>
+<rect x="543" y="190" width="108" height="24" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="597.0" y="206" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Video Script</text>
+<rect x="659" y="190" width="73" height="24" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="695.5" y="206" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Caption</text>
+<rect x="740" y="190" width="80" height="24" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="780.0" y="206" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Campaign</text>
+<rect x="828" y="190" width="59" height="24" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="857.5" y="206" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Ideas</text>
+<rect x="258" y="226" width="804" height="52" rx="6" fill="#FBFCFD" stroke="#DDE4EC" stroke-width="1"/>
+<text x="272" y="256" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#0B1B33" text-anchor="start">Create a Christmas graphic for DELCO with our dog in a Santa hat</text>
+<rect x="258" y="288" width="210" height="24" rx="12" fill="#E8F5EF" stroke="#BFE3D3" stroke-width="1"/>
+<text x="363" y="304" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#17845C" text-anchor="middle">DELCO Brand Lock: ON</text>
+<rect x="962" y="288" width="100" height="24" rx="6" fill="#F6A21E"/>
+<text x="1012" y="304" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0E2647" text-anchor="middle">Generate</text>
+<rect x="240" y="340" width="410" height="300" rx="8" fill="#0E2647"/>
+<circle cx="620" cy="360" r="120" fill="#FFFFFF" opacity="0.05"/>
+<text x="445" y="440" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle">MERRY CHRISTMAS</text>
+<text x="445" y="470" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle">FROM THE DELCO FAMILY</text>
+<text x="445" y="496" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#C9D6E8" text-anchor="middle">Central New Jersey · (732) 360-6201</text>
+<rect x="240" y="612" width="410" height="28" rx="0" fill="#F6A21E"/>
+<text x="445" y="631" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="800" fill="#0E2647" text-anchor="middle">(732) 360-6201 · CALLDELCO.COM</text>
+<rect x="660" y="340" width="410" height="300" rx="8" fill="#1D6FC4"/>
+<circle cx="1040" cy="360" r="120" fill="#FFFFFF" opacity="0.05"/>
+<text x="865" y="440" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle">MERRY CHRISTMAS</text>
+<text x="865" y="470" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle">FROM THE DELCO FAMILY</text>
+<text x="865" y="496" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#C9D6E8" text-anchor="middle">Central New Jersey · (732) 360-6201</text>
+<rect x="660" y="612" width="410" height="28" rx="0" fill="#F6A21E"/>
+<text x="865" y="631" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="800" fill="#0E2647" text-anchor="middle">(732) 360-6201 · CALLDELCO.COM</text>
+<rect x="240" y="654" width="92" height="26" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="286.0" y="671" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Regenerate</text>
+<rect x="340" y="654" width="50" height="26" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="365.0" y="671" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Edit</text>
+<rect x="398" y="654" width="120" height="26" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="458.0" y="671" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Change caption</text>
+<rect x="526" y="654" width="127" height="26" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="589.5" y="671" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Save to library</text>
+<rect x="661" y="654" width="127" height="26" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="724.5" y="671" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Add to calendar</text>
+<rect x="796" y="654" width="141" height="26" rx="6" fill="#F6A21E" stroke="#DDE4EC" stroke-width="1"/>
+<text x="866.5" y="671" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#0E2647" text-anchor="middle">Send for approval</text>
+<rect x="1180" y="10" width="280" height="580" rx="30" fill="#0B1B33"/>
+<rect x="1190" y="20" width="260" height="560" rx="22" fill="#F3F6FA"/>
+<rect x="1190" y="20" width="260" height="54" rx="0" fill="#FFFFFF"/>
+<rect x="1190" y="71" width="260" height="3" rx="0" fill="#F6A21E"/>
+<rect x="1204" y="38" width="16" height="16" rx="3" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1228" y="38" width="150" height="16" rx="8" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1236" y="50" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
+<rect x="1412" y="36" width="22" height="20" rx="5" fill="#0E2647"/>
+<text x="1204" y="96" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1B33" text-anchor="start">Create with AI</text>
+<rect x="1204" y="112" width="230" height="40" rx="6" fill="#FBFCFD" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1214" y="136" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">What do you want to create?</text>
+<rect x="1204" y="160" width="230" height="26" rx="6" fill="#F6A21E"/>
+<text x="1319" y="178" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0E2647" text-anchor="middle">Generate</text>
+<rect x="1204" y="198" width="230" height="240" rx="8" fill="#1D6FC4"/>
+<circle cx="1420" cy="220" r="80" fill="#FFFFFF" opacity="0.06"/>
+<text x="1319" y="286" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF" text-anchor="middle">MERRY CHRISTMAS</text>
+<text x="1319" y="304" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF" text-anchor="middle">FROM THE DELCO FAMILY</text>
+<rect x="1204" y="414" width="230" height="24" rx="0" fill="#F6A21E"/>
+<text x="1319" y="431" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="800" fill="#0E2647" text-anchor="middle">(732) 360-6201</text>
+<rect x="1204" y="450" width="110" height="28" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1259" y="469" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#46586F" text-anchor="middle">Regenerate</text>
+<rect x="1324" y="450" width="110" height="28" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1379" y="469" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#46586F" text-anchor="middle">Save</text>
+<rect x="1204" y="486" width="230" height="30" rx="6" fill="#F6A21E"/>
+<text x="1319" y="506" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0E2647" text-anchor="middle">Send for approval</text>
 </svg></div>
-  <ul class="points"><li>Uses DELCO's real logo, colours and mascot</li><li>Captions, scripts, Reel ideas or full campaigns</li><li>Send straight to approval when it's right</li></ul>
+  <p style="margin:0; position:absolute; left:128px; top:960px; width:1664px; font-size:26px; color:#8494A8; line-height:1.3">It uses DELCO's real logo, colors and mascot — no design work needed.</p>
+  <img data-art="logo" alt="DELCO artwork" style="position:absolute; left:610px; top:568px; width:110px; height:60px; object-fit:contain"><img data-art="dog" alt="DELCO artwork" style="position:absolute; left:618px; top:718px; width:94px; height:112px; object-fit:contain"><img data-art="logo" alt="DELCO artwork" style="position:absolute; left:1030px; top:568px; width:110px; height:60px; object-fit:contain"><img data-art="dog" alt="DELCO artwork" style="position:absolute; left:1038px; top:718px; width:94px; height:112px; object-fit:contain"><img data-art="logo" alt="DELCO artwork" style="position:absolute; left:1492px; top:424px; width:94px; height:50px; object-fit:contain"><img data-art="dog" alt="DELCO artwork" style="position:absolute; left:1497px; top:524px; width:84px; height:108px; object-fit:contain">
 </section>
 
-<section class="light" id="requests">
-  <h2>Content Requests</h2>
-  <p class="lede">The shared to-do list between the marketing team and DELCO.</p>
-  <div class="shot"><svg viewBox="0 0 360 680" style="width:100%;max-width:310px;height:auto;display:block;margin:0 auto"><rect x="0" y="0" width="360" height="680" rx="34" fill="#0B1B33"/>
-<rect x="14" y="12" width="332" height="656" rx="26" fill="#F3F6FA"/>
-<rect x="14" y="12" width="332" height="62" rx="0" fill="#FFFFFF"/>
-<rect x="14" y="72" width="332" height="3" rx="0" fill="#F6A21E"/>
-<rect x="30" y="32" width="22" height="22" rx="5" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="62" y="32" width="216" height="22" rx="11" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
-<text x="72" y="47" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
-<rect x="306" y="30" width="26" height="26" rx="6" fill="#0E2647"/>
-<text x="30" y="104" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#0B1B33" text-anchor="start">Content Requests</text>
-<text x="30" y="126" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#96590A" text-anchor="start">Waiting on DELCO</text>
-<rect x="30" y="138" width="302" height="84" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="30" y="138" width="302" height="3" rx="0" fill="#F6A21E"/>
-<text x="46" y="168" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#0B1B33" text-anchor="start">Record: 3 Signs Your AC</text>
-<text x="46" y="188" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">From Brian</text>
-<text x="46" y="208" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">Due Sep 8</text>
-<rect x="30" y="234" width="302" height="84" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="30" y="234" width="302" height="3" rx="0" fill="#F6A21E"/>
-<text x="46" y="264" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#0B1B33" text-anchor="start">Winter Promo Pricing</text>
-<text x="46" y="284" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">From Brian</text>
-<text x="46" y="304" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">Due Sep 15</text>
-<text x="30" y="354" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#0B1B33" text-anchor="start">Received</text>
-<rect x="30" y="366" width="302" height="84" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="46" y="396" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#0B1B33" text-anchor="start">Technician Install Videos</text>
-<text x="46" y="416" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">From Field Team</text>
-<text x="46" y="436" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#17845C" text-anchor="start">3 files</text>
-<rect x="30" y="462" width="302" height="84" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="46" y="492" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#0B1B33" text-anchor="start">Customer Reviews</text>
-<text x="46" y="512" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">From Office</text>
-<text x="46" y="532" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#17845C" text-anchor="start">5 files</text>
-<rect x="30" y="574" width="302" height="40" rx="8" fill="#F6A21E"/>
-<text x="181" y="600" font-family="Inter,sans-serif" font-size="12.5" font-weight="700" fill="#0E2647" text-anchor="middle">Upload from your phone</text>
+<section id="requests" data-transition="fade" style="background:#F3F6FA; color:#0B1B33; font-family:Inter, 'Helvetica Neue', Arial, sans-serif">
+  <h2 style="margin:0; position:absolute; left:128px; top:54px; width:1664px; font-size:52px; font-weight:800; line-height:1.05; letter-spacing:-1px">Content Requests</h2>
+  <p style="margin:0; position:absolute; left:128px; top:128px; width:1600px; font-size:28px; font-weight:400; color:#46586F; line-height:1.3">The shared to-do list between the marketing team and DELCO.</p>
+  <div style="position:absolute; left:220px; top:218px; width:1480px; height:710px"><svg aria-label="Content requests on desktop and phone" viewBox="0 0 1480 710" style="width:1480px; height:710px"><rect x="0" y="0" width="1120" height="700" rx="14" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1" y="1" width="1118" height="40" rx="0" fill="#F3F6FA"/>
+<circle cx="24" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="44" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="64" cy="21" r="5" fill="#CFD8E3"/>
+<rect x="110" y="11" width="300" height="20" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="126" y="25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">delco-social-hub.app</text>
+<rect x="1" y="41" width="210" height="658" rx="0" fill="#0E2647"/>
+<rect x="18" y="58" width="74" height="30" rx="4" fill="#0E2647" stroke="#F6A21E" stroke-width="2"/>
+<text x="55" y="73" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">DELCO</text>
+<text x="55" y="83" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="4.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">HEATING &amp; COOLING</text>
+<text x="28" y="122" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Dashboard</text>
+<text x="28" y="156" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Planner</text>
+<text x="28" y="190" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Create with AI</text>
+<rect x="12" y="206" width="188" height="28" rx="6" fill="#1B3A66"/>
+<rect x="12" y="206" width="3" height="28" rx="0" fill="#F6A21E"/>
+<text x="28" y="224" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="start">Content Requests</text>
+<text x="28" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Library</text>
+<text x="28" y="292" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Analytics</text>
+<text x="28" y="326" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Brand Hub</text>
+<text x="28" y="360" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Settings</text>
+<rect x="12" y="600" width="188" height="54" rx="8" fill="#1B3A66"/>
+<text x="28" y="622" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">Ask LUNA</text>
+<text x="28" y="640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#93A6C2" text-anchor="start">What should we post?</text>
+<rect x="211" y="41" width="909" height="49" rx="0" fill="#FFFFFF"/>
+<rect x="232" y="54" width="300" height="24" rx="12" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="248" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Search content and media</text>
+<rect x="980" y="54" width="120" height="24" rx="6" fill="#0E2647"/>
+<text x="1040" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ask LUNA</text>
+<rect x="211" y="87" width="909" height="3" rx="0" fill="#F6A21E"/>
+<rect x="211" y="90" width="909" height="609" rx="0" fill="#F3F6FA"/>
+<text x="240" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#0B1B33" text-anchor="start">Content requests</text>
+<text x="240" y="152" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">Two items are waiting on DELCO. Everything else is with the marketing team.</text>
+<text x="240" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0B1B33" text-anchor="start">Requested</text>
+<rect x="306" y="184" width="24" height="16" rx="8" fill="#F1F3F7"/>
+<text x="318" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#8494A8" text-anchor="middle">1</text>
+<rect x="240" y="212" width="128" height="86" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="240" y="212" width="128" height="3" rx="0" fill="#DDE4EC"/>
+<text x="252" y="238" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Team Photo — All T</text>
+<text x="252" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">From Chris</text>
+<text x="252" y="280" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">Due Sep 19</text>
+<text x="380" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#96590A" text-anchor="start">Waiting on DELCO</text>
+<rect x="488" y="184" width="24" height="16" rx="8" fill="#FEF3E0"/>
+<text x="500" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#96590A" text-anchor="middle">2</text>
+<rect x="380" y="212" width="128" height="86" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="380" y="212" width="128" height="3" rx="0" fill="#F6A21E"/>
+<text x="392" y="238" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Record: 3 Signs Yo</text>
+<text x="392" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">From Brian</text>
+<text x="392" y="280" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">Due Sep 8</text>
+<rect x="380" y="310" width="128" height="86" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="380" y="310" width="128" height="3" rx="0" fill="#F6A21E"/>
+<text x="392" y="336" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Winter Promo Prici</text>
+<text x="392" y="356" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">From Brian</text>
+<text x="392" y="378" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">Due Sep 15</text>
+<text x="520" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0B1B33" text-anchor="start">Received</text>
+<rect x="580" y="184" width="24" height="16" rx="8" fill="#F1F3F7"/>
+<text x="592" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#8494A8" text-anchor="middle">2</text>
+<rect x="520" y="212" width="128" height="86" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="520" y="212" width="128" height="3" rx="0" fill="#DDE4EC"/>
+<text x="532" y="238" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Technician Install</text>
+<text x="532" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">From Field Team</text>
+<text x="532" y="280" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">3 files</text>
+<rect x="520" y="310" width="128" height="86" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="520" y="310" width="128" height="3" rx="0" fill="#DDE4EC"/>
+<text x="532" y="336" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Customer Reviews</text>
+<text x="532" y="356" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">From Office</text>
+<text x="532" y="378" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">5 files</text>
+<text x="660" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0B1B33" text-anchor="start">In Production</text>
+<rect x="750" y="184" width="24" height="16" rx="8" fill="#F1F3F7"/>
+<text x="762" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#8494A8" text-anchor="middle">1</text>
+<rect x="660" y="212" width="128" height="86" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="660" y="212" width="128" height="3" rx="0" fill="#DDE4EC"/>
+<text x="672" y="238" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Fall Campaign Asse</text>
+<text x="672" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">From Marketing</text>
+<text x="672" y="280" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">Due Sep 12</text>
+<text x="800" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0B1B33" text-anchor="start">Ready for Approval</text>
+<rect x="920" y="184" width="24" height="16" rx="8" fill="#F1F3F7"/>
+<text x="932" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#8494A8" text-anchor="middle">1</text>
+<rect x="800" y="212" width="128" height="86" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="800" y="212" width="128" height="3" rx="0" fill="#DDE4EC"/>
+<text x="812" y="238" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Approve: Fall Camp</text>
+<text x="812" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">From Chris</text>
+<text x="812" y="280" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">Due Sep 10</text>
+<text x="940" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0B1B33" text-anchor="start">Complete</text>
+<rect x="1000" y="184" width="24" height="16" rx="8" fill="#F1F3F7"/>
+<text x="1012" y="196" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#8494A8" text-anchor="middle">1</text>
+<rect x="940" y="212" width="128" height="86" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="940" y="212" width="128" height="3" rx="0" fill="#DDE4EC"/>
+<text x="952" y="238" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">Mini-Split Photos</text>
+<text x="952" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">From Field Team</text>
+<text x="952" y="280" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">8 files</text>
+<rect x="240" y="470" width="840" height="206" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="258" y="500" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#0B1B33" text-anchor="start">Phone upload for the field team</text>
+<text x="258" y="524" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#46586F" text-anchor="start">Technicians get a text with a link. No app, no login — they tap and upload</text>
+<text x="258" y="542" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#46586F" text-anchor="start">straight from the job. The request updates here the moment files land.</text>
+<rect x="258" y="562" width="110" height="28" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="313" y="580" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Text the link</text>
+<rect x="760" y="494" width="140" height="170" rx="14" fill="#0E2647"/>
+<rect x="770" y="504" width="120" height="150" rx="10" fill="#FFFFFF"/>
+<rect x="790" y="514" width="80" height="26" rx="3" fill="#0E2647" stroke="#F6A21E" stroke-width="1.5"/>
+<text x="830" y="531" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">DELCO</text>
+<text x="782" y="560" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="700" fill="#0B1B33" text-anchor="start">Upload 3 install videos</text>
+<text x="782" y="574" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#8494A8" text-anchor="start">Due Sep 10 · Vertical</text>
+<rect x="782" y="584" width="96" height="40" rx="5" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="830" y="608" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#8494A8" text-anchor="middle">Take or choose</text>
+<rect x="782" y="630" width="96" height="16" rx="4" fill="#F6A21E"/>
+<text x="830" y="642" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="800" fill="#0E2647" text-anchor="middle">UPLOAD</text>
+<rect x="1180" y="10" width="280" height="580" rx="30" fill="#0B1B33"/>
+<rect x="1190" y="20" width="260" height="560" rx="22" fill="#F3F6FA"/>
+<rect x="1190" y="20" width="260" height="54" rx="0" fill="#FFFFFF"/>
+<rect x="1190" y="71" width="260" height="3" rx="0" fill="#F6A21E"/>
+<rect x="1204" y="38" width="16" height="16" rx="3" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1228" y="38" width="150" height="16" rx="8" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1236" y="50" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
+<rect x="1412" y="36" width="22" height="20" rx="5" fill="#0E2647"/>
+<text x="1204" y="96" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1B33" text-anchor="start">Content Requests</text>
+<text x="1204" y="116" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#96590A" text-anchor="start">Waiting on DELCO</text>
+<rect x="1204" y="126" width="230" height="74" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1204" y="126" width="230" height="3" rx="0" fill="#F6A21E"/>
+<text x="1216" y="152" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#0B1B33" text-anchor="start">Record: 3 Signs Your AC</text>
+<text x="1216" y="170" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">From Brian</text>
+<text x="1216" y="188" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">Due Sep 8</text>
+<rect x="1204" y="210" width="230" height="74" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1204" y="210" width="230" height="3" rx="0" fill="#F6A21E"/>
+<text x="1216" y="236" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#0B1B33" text-anchor="start">Winter Promo Pricing</text>
+<text x="1216" y="254" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">From Brian</text>
+<text x="1216" y="272" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">Due Sep 15</text>
+<text x="1204" y="316" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0B1B33" text-anchor="start">Received</text>
+<rect x="1204" y="326" width="230" height="74" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1216" y="352" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#0B1B33" text-anchor="start">Technician Install Videos</text>
+<text x="1216" y="370" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">From Field Team</text>
+<text x="1216" y="388" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#17845C" text-anchor="start">3 files</text>
+<rect x="1204" y="410" width="230" height="74" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1216" y="436" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#0B1B33" text-anchor="start">Customer Reviews</text>
+<text x="1216" y="454" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">From Office</text>
+<text x="1216" y="472" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#17845C" text-anchor="start">5 files</text>
+<rect x="1204" y="510" width="230" height="34" rx="6" fill="#F6A21E"/>
+<text x="1319" y="532" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0E2647" text-anchor="middle">Upload from your phone</text>
 </svg></div>
-  <ul class="points"><li>Clear list of what's still needed</li><li>Technicians get a text link and upload from the job</li><li>No app and no login for the crew</li></ul>
+  <p style="margin:0; position:absolute; left:128px; top:960px; width:1664px; font-size:26px; color:#8494A8; line-height:1.3">Technicians get a text with a link and upload from the job. No app, no login.</p>
+  
 </section>
 
-<section class="light" id="library">
-  <h2>The Content Library</h2>
-  <p class="lede">Every photo, video and graphic in one searchable place.</p>
-  <div class="shot"><svg viewBox="0 0 360 680" style="width:100%;max-width:310px;height:auto;display:block;margin:0 auto"><rect x="0" y="0" width="360" height="680" rx="34" fill="#0B1B33"/>
-<rect x="14" y="12" width="332" height="656" rx="26" fill="#F3F6FA"/>
-<rect x="14" y="12" width="332" height="62" rx="0" fill="#FFFFFF"/>
-<rect x="14" y="72" width="332" height="3" rx="0" fill="#F6A21E"/>
-<rect x="30" y="32" width="22" height="22" rx="5" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="62" y="32" width="216" height="22" rx="11" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
-<text x="72" y="47" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
-<rect x="306" y="30" width="26" height="26" rx="6" fill="#0E2647"/>
-<text x="30" y="104" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#0B1B33" text-anchor="start">Content Library</text>
-<rect x="30" y="124" width="146" height="156" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="40" y="134" width="126" height="92" rx="7" fill="#C2610A"/>
-<text x="42" y="246" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#0B1B33" text-anchor="start">sayreville-afte</text>
-<text x="42" y="264" font-family="Inter,sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
-<rect x="186" y="124" width="146" height="156" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="196" y="134" width="126" height="92" rx="7" fill="#C2610A"/>
-<text x="198" y="246" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#0B1B33" text-anchor="start">marcus-van.mp4</text>
-<text x="198" y="264" font-family="Inter,sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
-<rect x="30" y="292" width="146" height="156" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="40" y="302" width="126" height="92" rx="7" fill="#0E2647"/>
-<text x="42" y="414" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#0B1B33" text-anchor="start">attic-install</text>
-<text x="42" y="432" font-family="Inter,sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
-<rect x="186" y="292" width="146" height="156" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="196" y="302" width="126" height="92" rx="7" fill="#1D6FC4"/>
-<text x="198" y="414" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#0B1B33" text-anchor="start">minisplit.mp4</text>
-<text x="198" y="432" font-family="Inter,sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
-<rect x="30" y="460" width="146" height="156" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="40" y="470" width="126" height="92" rx="7" fill="#F6A21E"/>
-<text x="42" y="582" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#0B1B33" text-anchor="start">fall-tuneup</text>
-<text x="42" y="600" font-family="Inter,sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
-<rect x="186" y="460" width="146" height="156" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="196" y="470" width="126" height="92" rx="7" fill="#1D6FC4"/>
-<text x="198" y="582" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#0B1B33" text-anchor="start">winter-ready</text>
-<text x="198" y="600" font-family="Inter,sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
-<rect x="30" y="640" width="302" height="0" rx="0" fill="#fff"/>
+<section id="library" data-transition="fade" style="background:#F3F6FA; color:#0B1B33; font-family:Inter, 'Helvetica Neue', Arial, sans-serif">
+  <h2 style="margin:0; position:absolute; left:128px; top:54px; width:1664px; font-size:52px; font-weight:800; line-height:1.05; letter-spacing:-1px">The Content Library</h2>
+  <p style="margin:0; position:absolute; left:128px; top:128px; width:1600px; font-size:28px; font-weight:400; color:#46586F; line-height:1.3">Every photo, video and graphic in one searchable place, tagged and labeled.</p>
+  <div style="position:absolute; left:220px; top:218px; width:1480px; height:710px"><svg aria-label="Content library on desktop and phone" viewBox="0 0 1480 710" style="width:1480px; height:710px"><rect x="0" y="0" width="1120" height="700" rx="14" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1" y="1" width="1118" height="40" rx="0" fill="#F3F6FA"/>
+<circle cx="24" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="44" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="64" cy="21" r="5" fill="#CFD8E3"/>
+<rect x="110" y="11" width="300" height="20" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="126" y="25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">delco-social-hub.app</text>
+<rect x="1" y="41" width="210" height="658" rx="0" fill="#0E2647"/>
+<rect x="18" y="58" width="74" height="30" rx="4" fill="#0E2647" stroke="#F6A21E" stroke-width="2"/>
+<text x="55" y="73" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">DELCO</text>
+<text x="55" y="83" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="4.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">HEATING &amp; COOLING</text>
+<text x="28" y="122" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Dashboard</text>
+<text x="28" y="156" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Planner</text>
+<text x="28" y="190" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Create with AI</text>
+<text x="28" y="224" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Requests</text>
+<rect x="12" y="240" width="188" height="28" rx="6" fill="#1B3A66"/>
+<rect x="12" y="240" width="3" height="28" rx="0" fill="#F6A21E"/>
+<text x="28" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="start">Content Library</text>
+<text x="28" y="292" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Analytics</text>
+<text x="28" y="326" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Brand Hub</text>
+<text x="28" y="360" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Settings</text>
+<rect x="12" y="600" width="188" height="54" rx="8" fill="#1B3A66"/>
+<text x="28" y="622" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">Ask LUNA</text>
+<text x="28" y="640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#93A6C2" text-anchor="start">What should we post?</text>
+<rect x="211" y="41" width="909" height="49" rx="0" fill="#FFFFFF"/>
+<rect x="232" y="54" width="300" height="24" rx="12" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="248" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Search content and media</text>
+<rect x="980" y="54" width="120" height="24" rx="6" fill="#0E2647"/>
+<text x="1040" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ask LUNA</text>
+<rect x="211" y="87" width="909" height="3" rx="0" fill="#F6A21E"/>
+<rect x="211" y="90" width="909" height="609" rx="0" fill="#F3F6FA"/>
+<text x="240" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#0B1B33" text-anchor="start">Content library</text>
+<text x="240" y="152" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">Every photo, video and graphic DELCO has, in one place.</text>
+<rect x="240" y="172" width="43" height="26" rx="6" fill="#0E2647" stroke="#DDE4EC" stroke-width="1"/>
+<text x="261.5" y="189" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">All</text>
+<rect x="291" y="172" width="64" height="26" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="323.0" y="189" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Photos</text>
+<rect x="363" y="172" width="64" height="26" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="395.0" y="189" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Videos</text>
+<rect x="435" y="172" width="78" height="26" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="474.0" y="189" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Graphics</text>
+<rect x="521" y="172" width="85" height="26" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="563.5" y="189" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Published</text>
+<rect x="614" y="172" width="106" height="26" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="667.0" y="189" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">AI Generated</text>
+<rect x="728" y="172" width="113" height="26" rx="6" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="784.5" y="189" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#46586F" text-anchor="middle">Logos &amp; Brand</text>
+<rect x="240" y="210" width="96.0" height="22" rx="11" fill="#E9F1FB" stroke="#DDE4EC" stroke-width="1"/>
+<text x="288.0" y="225" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="500" fill="#1D6FC4" text-anchor="middle">Installation</text>
+<rect x="344.0" y="210" width="83.0" height="22" rx="11" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="385.5" y="225" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="500" fill="#46586F" text-anchor="middle">Technician</text>
+<rect x="435.0" y="210" width="76.5" height="22" rx="11" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="473.25" y="225" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="500" fill="#46586F" text-anchor="middle">HVAC Unit</text>
+<rect x="519.5" y="210" width="44.0" height="22" rx="11" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="541.5" y="225" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="500" fill="#46586F" text-anchor="middle">Team</text>
+<rect x="571.5" y="210" width="70.0" height="22" rx="11" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="606.5" y="225" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="500" fill="#46586F" text-anchor="middle">Customer</text>
+<rect x="649.5" y="210" width="70.0" height="22" rx="11" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="684.5" y="225" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="500" fill="#46586F" text-anchor="middle">Seasonal</text>
+<rect x="727.5" y="210" width="76.5" height="22" rx="11" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="765.75" y="225" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="500" fill="#46586F" text-anchor="middle">Christmas</text>
+<rect x="812.0" y="210" width="89.5" height="22" rx="11" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="856.75" y="225" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="500" fill="#46586F" text-anchor="middle">Maintenance</text>
+<rect x="240" y="248" width="196" height="132" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="248" y="256" width="180" height="76" rx="6" fill="#F6A21E"/>
+<text x="252" y="350" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">sayreville-after.jpg</text>
+<text x="252" y="366" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
+<rect x="452" y="248" width="196" height="132" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="460" y="256" width="180" height="76" rx="6" fill="#F6A21E"/>
+<text x="464" y="350" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">sayreville-before.jpg</text>
+<text x="464" y="366" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
+<rect x="664" y="248" width="196" height="132" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="672" y="256" width="180" height="76" rx="6" fill="#0E2647"/>
+<text x="676" y="350" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">marcus-van.mp4</text>
+<text x="676" y="366" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
+<rect x="876" y="248" width="196" height="132" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="884" y="256" width="180" height="76" rx="6" fill="#1D6FC4"/>
+<text x="888" y="350" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">minisplit.mp4</text>
+<text x="888" y="366" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
+<rect x="240" y="392" width="196" height="132" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="248" y="400" width="180" height="76" rx="6" fill="#F6A21E"/>
+<text x="252" y="494" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">attic-install.jpg</text>
+<text x="252" y="510" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
+<rect x="452" y="392" width="196" height="132" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="460" y="400" width="180" height="76" rx="6" fill="#1D6FC4"/>
+<text x="464" y="494" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">coil-clean.mp4</text>
+<text x="464" y="510" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
+<rect x="664" y="392" width="196" height="132" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="672" y="400" width="180" height="76" rx="6" fill="#17845C"/>
+<text x="676" y="494" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">review-lisa.png</text>
+<text x="676" y="510" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
+<rect x="876" y="392" width="196" height="132" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="884" y="400" width="180" height="76" rx="6" fill="#0E2647"/>
+<text x="888" y="494" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">team-trucks.jpg</text>
+<text x="888" y="510" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
+<rect x="240" y="536" width="196" height="132" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="248" y="544" width="180" height="76" rx="6" fill="#F6A21E"/>
+<text x="252" y="638" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">fall-tuneup-89.png</text>
+<text x="252" y="654" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
+<rect x="452" y="536" width="196" height="132" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="460" y="544" width="180" height="76" rx="6" fill="#1D6FC4"/>
+<text x="464" y="638" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">winter-ready.png</text>
+<text x="464" y="654" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
+<rect x="664" y="536" width="196" height="132" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="672" y="544" width="180" height="76" rx="6" fill="#17845C"/>
+<text x="676" y="638" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">oldbridge.jpg</text>
+<text x="676" y="654" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
+<rect x="876" y="536" width="196" height="132" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="884" y="544" width="180" height="76" rx="6" fill="#F6A21E"/>
+<text x="888" y="638" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="start">delco-dog.jpg</text>
+<text x="888" y="654" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1, 2026</text>
+<rect x="360" y="636" width="600" height="44" rx="10" fill="#0E2647"/>
+<rect x="380" y="648" width="97" height="22" rx="5" fill="#FFFFFF"/>
+<text x="428.5" y="663" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="middle">Create post</text>
+<rect x="485" y="648" width="118" height="22" rx="5" fill="#FFFFFF"/>
+<text x="544.0" y="663" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="middle">Create graphic</text>
+<rect x="611" y="648" width="125" height="22" rx="5" fill="#FFFFFF"/>
+<text x="673.5" y="663" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="middle">Add to calendar</text>
+<rect x="744" y="648" width="76" height="22" rx="5" fill="#FFFFFF"/>
+<text x="782.0" y="663" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="middle">Download</text>
+<rect x="828" y="648" width="55" height="22" rx="5" fill="#FFFFFF"/>
+<text x="855.5" y="663" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#0B1B33" text-anchor="middle">Share</text>
+<rect x="1180" y="10" width="280" height="580" rx="30" fill="#0B1B33"/>
+<rect x="1190" y="20" width="260" height="560" rx="22" fill="#F3F6FA"/>
+<rect x="1190" y="20" width="260" height="54" rx="0" fill="#FFFFFF"/>
+<rect x="1190" y="71" width="260" height="3" rx="0" fill="#F6A21E"/>
+<rect x="1204" y="38" width="16" height="16" rx="3" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1228" y="38" width="150" height="16" rx="8" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1236" y="50" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
+<rect x="1412" y="36" width="22" height="20" rx="5" fill="#0E2647"/>
+<text x="1204" y="96" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1B33" text-anchor="start">Content Library</text>
+<rect x="1204" y="112" width="110" height="120" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1210" y="118" width="98" height="66" rx="5" fill="#F6A21E"/>
+<text x="1214" y="202" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="600" fill="#0B1B33" text-anchor="start">sayreville-aft</text>
+<text x="1214" y="216" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1</text>
+<rect x="1322" y="112" width="110" height="120" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1328" y="118" width="98" height="66" rx="5" fill="#F6A21E"/>
+<text x="1332" y="202" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="600" fill="#0B1B33" text-anchor="start">sayreville-bef</text>
+<text x="1332" y="216" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1</text>
+<rect x="1204" y="242" width="110" height="120" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1210" y="248" width="98" height="66" rx="5" fill="#0E2647"/>
+<text x="1214" y="332" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="600" fill="#0B1B33" text-anchor="start">marcus-van.mp4</text>
+<text x="1214" y="346" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1</text>
+<rect x="1322" y="242" width="110" height="120" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1328" y="248" width="98" height="66" rx="5" fill="#1D6FC4"/>
+<text x="1332" y="332" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="600" fill="#0B1B33" text-anchor="start">minisplit.mp4</text>
+<text x="1332" y="346" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1</text>
+<rect x="1204" y="372" width="110" height="120" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1210" y="378" width="98" height="66" rx="5" fill="#F6A21E"/>
+<text x="1214" y="462" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="600" fill="#0B1B33" text-anchor="start">attic-install.</text>
+<text x="1214" y="476" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1</text>
+<rect x="1322" y="372" width="110" height="120" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1328" y="378" width="98" height="66" rx="5" fill="#1D6FC4"/>
+<text x="1332" y="462" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="600" fill="#0B1B33" text-anchor="start">coil-clean.mp4</text>
+<text x="1332" y="476" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#8494A8" text-anchor="start">Sep 1</text>
+<rect x="1204" y="510" width="230" height="32" rx="6" fill="#F6A21E"/>
+<text x="1319" y="531" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#0E2647" text-anchor="middle">Upload media</text>
 </svg></div>
-  <ul class="points"><li>Tagged by job type, season and subject</li><li>Shows where each file has been used</li><li>Turn any asset into a post</li></ul>
+  <p style="margin:0; position:absolute; left:128px; top:960px; width:1664px; font-size:26px; color:#8494A8; line-height:1.3">Nothing gets lost in someone's camera roll. Pick an asset and turn it into a post.</p>
+  
 </section>
 
-<section class="light" id="analytics">
-  <h2>Analytics</h2>
-  <p class="lede">How posts actually performed, and what to do more of next week.</p>
-  <div class="shot"><svg viewBox="0 0 360 680" style="width:100%;max-width:310px;height:auto;display:block;margin:0 auto"><rect x="0" y="0" width="360" height="680" rx="34" fill="#0B1B33"/>
-<rect x="14" y="12" width="332" height="656" rx="26" fill="#F3F6FA"/>
-<rect x="14" y="12" width="332" height="62" rx="0" fill="#FFFFFF"/>
-<rect x="14" y="72" width="332" height="3" rx="0" fill="#F6A21E"/>
-<rect x="30" y="32" width="22" height="22" rx="5" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="62" y="32" width="216" height="22" rx="11" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
-<text x="72" y="47" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
-<rect x="306" y="30" width="26" height="26" rx="6" fill="#0E2647"/>
-<text x="30" y="104" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#0B1B33" text-anchor="start">Analytics</text>
-<rect x="30" y="124" width="146" height="74" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="44" y="148" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Reach</text>
-<text x="44" y="180" font-family="Inter,sans-serif" font-size="22" font-weight="800" fill="#0B1B33" text-anchor="start">94.2K</text>
-<rect x="186" y="124" width="146" height="74" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="200" y="148" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Engagement</text>
-<text x="200" y="180" font-family="Inter,sans-serif" font-size="22" font-weight="800" fill="#17845C" text-anchor="start">6.4%</text>
-<rect x="30" y="210" width="302" height="160" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="46" y="236" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#0B1B33" text-anchor="start">Reach over time</text>
-<polyline points="50,344 84,330 118,340 152,300 186,314 220,284 254,296 288,262 312,276" fill="none" stroke="#1D6FC4" stroke-width="3"/>
-<rect x="30" y="384" width="302" height="150" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="46" y="412" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#96590A" text-anchor="start">What's working</text>
-<text x="46" y="436" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">Videos with Brian get 2.4x</text>
-<text x="46" y="454" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">more engagement than</text>
-<text x="46" y="472" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">static graphics.</text>
-<text x="46" y="490" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start"></text>
-<text x="46" y="508" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">Install videos reach 38%</text>
-<text x="46" y="526" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">more people.</text>
-<rect x="30" y="548" width="302" height="88" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="46" y="576" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#0B1B33" text-anchor="start">Recommended</text>
-<text x="46" y="600" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">Film 2 more Brian videos</text>
-<text x="46" y="620" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">Post 4 times next week</text>
+<section id="analytics" data-transition="fade" style="background:#F3F6FA; color:#0B1B33; font-family:Inter, 'Helvetica Neue', Arial, sans-serif">
+  <h2 style="margin:0; position:absolute; left:128px; top:54px; width:1664px; font-size:52px; font-weight:800; line-height:1.05; letter-spacing:-1px">Analytics</h2>
+  <p style="margin:0; position:absolute; left:128px; top:128px; width:1600px; font-size:28px; font-weight:400; color:#46586F; line-height:1.3">How posts actually performed, and what to do more of next week.</p>
+  <div style="position:absolute; left:220px; top:218px; width:1480px; height:710px"><svg aria-label="Analytics on desktop and phone" viewBox="0 0 1480 710" style="width:1480px; height:710px"><rect x="0" y="0" width="1120" height="700" rx="14" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1" y="1" width="1118" height="40" rx="0" fill="#F3F6FA"/>
+<circle cx="24" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="44" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="64" cy="21" r="5" fill="#CFD8E3"/>
+<rect x="110" y="11" width="300" height="20" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="126" y="25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">delco-social-hub.app</text>
+<rect x="1" y="41" width="210" height="658" rx="0" fill="#0E2647"/>
+<rect x="18" y="58" width="74" height="30" rx="4" fill="#0E2647" stroke="#F6A21E" stroke-width="2"/>
+<text x="55" y="73" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">DELCO</text>
+<text x="55" y="83" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="4.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">HEATING &amp; COOLING</text>
+<text x="28" y="122" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Dashboard</text>
+<text x="28" y="156" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Planner</text>
+<text x="28" y="190" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Create with AI</text>
+<text x="28" y="224" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Requests</text>
+<text x="28" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Library</text>
+<rect x="12" y="274" width="188" height="28" rx="6" fill="#1B3A66"/>
+<rect x="12" y="274" width="3" height="28" rx="0" fill="#F6A21E"/>
+<text x="28" y="292" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="start">Analytics</text>
+<text x="28" y="326" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Brand Hub</text>
+<text x="28" y="360" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Settings</text>
+<rect x="12" y="600" width="188" height="54" rx="8" fill="#1B3A66"/>
+<text x="28" y="622" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">Ask LUNA</text>
+<text x="28" y="640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#93A6C2" text-anchor="start">What should we post?</text>
+<rect x="211" y="41" width="909" height="49" rx="0" fill="#FFFFFF"/>
+<rect x="232" y="54" width="300" height="24" rx="12" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="248" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Search content and media</text>
+<rect x="980" y="54" width="120" height="24" rx="6" fill="#0E2647"/>
+<text x="1040" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ask LUNA</text>
+<rect x="211" y="87" width="909" height="3" rx="0" fill="#F6A21E"/>
+<rect x="211" y="90" width="909" height="609" rx="0" fill="#F3F6FA"/>
+<text x="240" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#0B1B33" text-anchor="start">Analytics</text>
+<text x="240" y="152" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">August 3 – September 1, 2026</text>
+<rect x="240" y="172" width="200" height="76" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="254" y="194" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#8494A8" text-anchor="start">Followers</text>
+<text x="254" y="222" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="800" fill="#0B1B33" text-anchor="start">7,485</text>
+<text x="254" y="240" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#17845C" text-anchor="start">+12.4%</text>
+<rect x="452" y="172" width="200" height="76" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="466" y="194" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#8494A8" text-anchor="start">Follower growth</text>
+<text x="466" y="222" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="800" fill="#0B1B33" text-anchor="start">+826</text>
+<text x="466" y="240" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#17845C" text-anchor="start">vs +341</text>
+<rect x="664" y="172" width="200" height="76" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="678" y="194" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#8494A8" text-anchor="start">Reach</text>
+<text x="678" y="222" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="800" fill="#0B1B33" text-anchor="start">94,240</text>
+<text x="678" y="240" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#17845C" text-anchor="start">+38%</text>
+<rect x="876" y="172" width="200" height="76" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="890" y="194" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#8494A8" text-anchor="start">Engagement</text>
+<text x="890" y="222" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="800" fill="#0B1B33" text-anchor="start">6.4%</text>
+<text x="890" y="240" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#17845C" text-anchor="start">+1.8 pts</text>
+<rect x="240" y="262" width="410" height="190" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="258" y="288" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#0B1B33" text-anchor="start">Follower growth</text>
+<polyline points="262,430 300,424 340,418 380,412 420,406 460,400 500,396 540,392 580,388 620,384" fill="none" stroke="#1D6FC4" stroke-width="2.5"/>
+<polyline points="262,436 300,428 340,416 380,400 420,382 460,362 500,344 540,330 580,318 620,308" fill="none" stroke="#C13584" stroke-width="2.5"/>
+<polyline points="262,442 300,438 340,432 380,424 420,414 460,402 500,392 540,382 580,372 620,364" fill="none" stroke="#0B1B33" stroke-width="2.5"/>
+<rect x="670" y="262" width="410" height="190" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="688" y="288" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#0B1B33" text-anchor="start">Reach over time</text>
+<polyline points="692,430 730,418 768,428 806,380 844,398 882,360 920,376 958,336 996,352 1034,316" fill="none" stroke="#1D6FC4" stroke-width="2.5"/>
+<rect x="240" y="466" width="500" height="210" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="258" y="492" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#96590A" text-anchor="start">What's working</text>
+<text x="258" y="516" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#46586F" text-anchor="start">Educational videos featuring Brian are generating 2.4x more</text>
+<text x="258" y="538" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#46586F" text-anchor="start">engagement than static graphics.</text>
+<text x="258" y="560" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#46586F" text-anchor="start">Installation videos receive 38% more reach than promos.</text>
+<text x="258" y="582" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#46586F" text-anchor="start">Posts published between 6 and 8 PM perform best.</text>
+<rect x="760" y="466" width="320" height="210" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="778" y="492" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#0B1B33" text-anchor="start">Recommended next moves</text>
+<rect x="778" y="504" width="284" height="32" rx="6" fill="#F3F6FA"/>
+<text x="790" y="524" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#0B1B33" text-anchor="start">Film 2 more Brian videos</text>
+<rect x="778" y="544" width="284" height="32" rx="6" fill="#F3F6FA"/>
+<text x="790" y="564" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#0B1B33" text-anchor="start">Increase installation content</text>
+<rect x="778" y="584" width="284" height="32" rx="6" fill="#F3F6FA"/>
+<text x="790" y="604" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#0B1B33" text-anchor="start">Reduce promotional graphics</text>
+<rect x="778" y="624" width="284" height="32" rx="6" fill="#F3F6FA"/>
+<text x="790" y="644" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#0B1B33" text-anchor="start">Post 4 times next week</text>
+<rect x="1180" y="10" width="280" height="580" rx="30" fill="#0B1B33"/>
+<rect x="1190" y="20" width="260" height="560" rx="22" fill="#F3F6FA"/>
+<rect x="1190" y="20" width="260" height="54" rx="0" fill="#FFFFFF"/>
+<rect x="1190" y="71" width="260" height="3" rx="0" fill="#F6A21E"/>
+<rect x="1204" y="38" width="16" height="16" rx="3" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1228" y="38" width="150" height="16" rx="8" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1236" y="50" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
+<rect x="1412" y="36" width="22" height="20" rx="5" fill="#0E2647"/>
+<text x="1204" y="96" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1B33" text-anchor="start">Analytics</text>
+<rect x="1204" y="112" width="110" height="60" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1214" y="132" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Reach</text>
+<text x="1214" y="158" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="800" fill="#0B1B33" text-anchor="start">94.2K</text>
+<rect x="1324" y="112" width="110" height="60" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1334" y="132" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8494A8" text-anchor="start">Engagement</text>
+<text x="1334" y="158" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="800" fill="#17845C" text-anchor="start">6.4%</text>
+<rect x="1204" y="184" width="230" height="120" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1216" y="206" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#0B1B33" text-anchor="start">Reach over time</text>
+<polyline points="1220,286 1244,276 1268,284 1292,252 1316,264 1340,238 1364,250 1388,224 1412,236 1428,214" fill="none" stroke="#1D6FC4" stroke-width="2.5"/>
+<rect x="1204" y="316" width="230" height="150" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1216" y="338" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#96590A" text-anchor="start">What's working</text>
+<text x="1216" y="356" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">Videos with Brian get 2.4x</text>
+<text x="1216" y="374" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">more engagement than</text>
+<text x="1216" y="392" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">graphics.</text>
+<text x="1216" y="410" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start"></text>
+<text x="1216" y="428" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">Install videos reach 38%</text>
+<text x="1216" y="446" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#46586F" text-anchor="start">more people than promos.</text>
 </svg></div>
-  <ul class="points"><li>Followers, reach and engagement over time</li><li>Plain-English read on what's working</li><li>Demo figures — live stats get wired in later</li></ul>
+  <p style="margin:0; position:absolute; left:128px; top:960px; width:1664px; font-size:26px; color:#8494A8; line-height:1.3">Numbers are demo data for now. Live Instagram and TikTok stats get wired in later.</p>
+  
 </section>
 
-<section class="light" id="brand">
-  <h2>Brand Hub and LUNA</h2>
-  <p class="lede">Where DELCO teaches the software its brand — and an assistant that knows all of it.</p>
-  <div class="shot"><svg viewBox="0 0 360 680" style="width:100%;max-width:310px;height:auto;display:block;margin:0 auto"><rect x="0" y="0" width="360" height="680" rx="34" fill="#0B1B33"/>
-<rect x="14" y="12" width="332" height="656" rx="26" fill="#F3F6FA"/>
-<rect x="14" y="12" width="332" height="62" rx="0" fill="#FFFFFF"/>
-<rect x="14" y="72" width="332" height="3" rx="0" fill="#F6A21E"/>
-<rect x="30" y="32" width="22" height="22" rx="5" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="62" y="32" width="216" height="22" rx="11" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
-<text x="72" y="47" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
-<rect x="306" y="30" width="26" height="26" rx="6" fill="#0E2647"/>
-<text x="30" y="104" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#0B1B33" text-anchor="start">Brand Hub</text>
-<rect x="30" y="124" width="302" height="120" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="46" y="150" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#0B1B33" text-anchor="start">Logo</text>
-<image href="" data-art="logo" x="96" y="158" width="170" height="76"/>
-<rect x="30" y="256" width="302" height="104" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
-<text x="46" y="282" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#0B1B33" text-anchor="start">Brand colours</text>
-<rect x="46" y="296" width="56" height="50" rx="7" fill="#F6A21E" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="116" y="296" width="56" height="50" rx="7" fill="#0E2647" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="186" y="296" width="56" height="50" rx="7" fill="#1D6FC4" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="256" y="296" width="56" height="50" rx="7" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
-<rect x="30" y="372" width="302" height="264" rx="10" fill="#0E2647"/>
-<text x="46" y="400" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="start">LUNA</text>
-<text x="46" y="420" font-family="Inter,sans-serif" font-size="10.5" font-weight="400" fill="#93A6C2" text-anchor="start">DELCO's marketing assistant</text>
-<text x="46" y="450" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#C9D6E8" text-anchor="start">Two things are with DELCO.</text>
-<text x="46" y="470" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#C9D6E8" text-anchor="start"></text>
-<text x="46" y="490" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#FFFFFF" text-anchor="start">Brian owes the AC video —</text>
-<text x="46" y="510" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#C9D6E8" text-anchor="start">due Sep 8, reminder sent.</text>
-<text x="46" y="530" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#C9D6E8" text-anchor="start"></text>
-<text x="46" y="550" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#FFFFFF" text-anchor="start">Chris has 5 campaign assets</text>
-<text x="46" y="570" font-family="Inter,sans-serif" font-size="11" font-weight="400" fill="#C9D6E8" text-anchor="start">to approve by Sep 10.</text>
+<section id="brandluna" data-transition="fade" style="background:#F3F6FA; color:#0B1B33; font-family:Inter, 'Helvetica Neue', Arial, sans-serif">
+  <h2 style="margin:0; position:absolute; left:128px; top:54px; width:1664px; font-size:52px; font-weight:800; line-height:1.05; letter-spacing:-1px">Brand Hub and LUNA</h2>
+  <p style="margin:0; position:absolute; left:128px; top:128px; width:1600px; font-size:28px; font-weight:400; color:#46586F; line-height:1.3">Where DELCO teaches the software its brand — and an assistant that knows all of it.</p>
+  <div style="position:absolute; left:220px; top:218px; width:1480px; height:710px"><svg aria-label="Brand hub and LUNA on desktop and phone" viewBox="0 0 1480 710" style="width:1480px; height:710px"><rect x="0" y="0" width="1120" height="700" rx="14" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1" y="1" width="1118" height="40" rx="0" fill="#F3F6FA"/>
+<circle cx="24" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="44" cy="21" r="5" fill="#CFD8E3"/>
+<circle cx="64" cy="21" r="5" fill="#CFD8E3"/>
+<rect x="110" y="11" width="300" height="20" rx="10" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="126" y="25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">delco-social-hub.app</text>
+<rect x="1" y="41" width="210" height="658" rx="0" fill="#0E2647"/>
+<rect x="18" y="58" width="74" height="30" rx="4" fill="#0E2647" stroke="#F6A21E" stroke-width="2"/>
+<text x="55" y="73" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">DELCO</text>
+<text x="55" y="83" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="4.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">HEATING &amp; COOLING</text>
+<text x="28" y="122" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Dashboard</text>
+<text x="28" y="156" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Planner</text>
+<text x="28" y="190" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Create with AI</text>
+<text x="28" y="224" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Requests</text>
+<text x="28" y="258" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Content Library</text>
+<text x="28" y="292" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Analytics</text>
+<rect x="12" y="308" width="188" height="28" rx="6" fill="#1B3A66"/>
+<rect x="12" y="308" width="3" height="28" rx="0" fill="#F6A21E"/>
+<text x="28" y="326" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="start">Brand Hub</text>
+<text x="28" y="360" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#93A6C2" text-anchor="start">Settings</text>
+<rect x="12" y="600" width="188" height="54" rx="8" fill="#1B3A66"/>
+<text x="28" y="622" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">Ask LUNA</text>
+<text x="28" y="640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#93A6C2" text-anchor="start">What should we post?</text>
+<rect x="211" y="41" width="909" height="49" rx="0" fill="#FFFFFF"/>
+<rect x="232" y="54" width="300" height="24" rx="12" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="248" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#8494A8" text-anchor="start">Search content and media</text>
+<rect x="980" y="54" width="120" height="24" rx="6" fill="#0E2647"/>
+<text x="1040" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ask LUNA</text>
+<rect x="211" y="87" width="909" height="3" rx="0" fill="#F6A21E"/>
+<rect x="211" y="90" width="909" height="609" rx="0" fill="#F3F6FA"/>
+<text x="240" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#0B1B33" text-anchor="start">Brand hub</text>
+<text x="240" y="152" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#46586F" text-anchor="start">Everything DELCO AI uses when it creates content.</text>
+<rect x="240" y="172" width="400" height="220" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="258" y="198" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#0B1B33" text-anchor="start">Logo</text>
+<rect x="660" y="172" width="420" height="220" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="678" y="198" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#0B1B33" text-anchor="start">Brand colors</text>
+<rect x="678" y="214" width="34" height="34" rx="5" fill="#F6A21E" stroke="#DDE4EC" stroke-width="1"/>
+<text x="724" y="230" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#0B1B33" text-anchor="start">DELCO Gold</text>
+<text x="724" y="244" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">#F6A21E</text>
+<rect x="678" y="256" width="34" height="34" rx="5" fill="#0E2647" stroke="#DDE4EC" stroke-width="1"/>
+<text x="724" y="272" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#0B1B33" text-anchor="start">Shield Navy</text>
+<text x="724" y="286" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">#0E2647</text>
+<rect x="678" y="298" width="34" height="34" rx="5" fill="#1D6FC4" stroke="#DDE4EC" stroke-width="1"/>
+<text x="724" y="314" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#0B1B33" text-anchor="start">Banner Blue</text>
+<text x="724" y="328" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">#1D6FC4</text>
+<rect x="678" y="340" width="34" height="34" rx="5" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="724" y="356" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#0B1B33" text-anchor="start">Off White</text>
+<text x="724" y="370" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">#F3F6FA</text>
+<rect x="240" y="408" width="400" height="268" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="258" y="434" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#0B1B33" text-anchor="start">Brand voice</text>
+<rect x="258" y="450" width="98.0" height="24" rx="12" fill="#E8F5EF"/>
+<text x="307.0" y="466" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#17845C" text-anchor="middle">Professional</text>
+<rect x="364.0" y="450" width="52.5" height="24" rx="12" fill="#E8F5EF"/>
+<text x="390.25" y="466" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#17845C" text-anchor="middle">Local</text>
+<rect x="424.5" y="450" width="72.0" height="24" rx="12" fill="#E8F5EF"/>
+<text x="460.5" y="466" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#17845C" text-anchor="middle">Friendly</text>
+<rect x="504.5" y="450" width="65.5" height="24" rx="12" fill="#E8F5EF"/>
+<text x="537.25" y="466" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#17845C" text-anchor="middle">Helpful</text>
+<rect x="258" y="480" width="117.5" height="24" rx="12" fill="#E8F5EF"/>
+<text x="316.75" y="496" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#17845C" text-anchor="middle">Straightforward</text>
+<rect x="383.5" y="480" width="137.0" height="24" rx="12" fill="#E8F5EF"/>
+<text x="452.0" y="496" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#17845C" text-anchor="middle">Occasionally funny</text>
+<text x="258" y="536" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#8494A8" text-anchor="start">Avoid</text>
+<rect x="258" y="546" width="137.0" height="24" rx="12" fill="#FEF3E0"/>
+<text x="326.5" y="562" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#96590A" text-anchor="middle">Corporate language</text>
+<rect x="403.0" y="546" width="143.5" height="24" rx="12" fill="#FEF3E0"/>
+<text x="474.75" y="562" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#96590A" text-anchor="middle">Generic AI language</text>
+<rect x="258" y="576" width="117.5" height="24" rx="12" fill="#FEF3E0"/>
+<text x="316.75" y="592" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#96590A" text-anchor="middle">Too many emojis</text>
+<rect x="383.5" y="576" width="98.0" height="24" rx="12" fill="#FEF3E0"/>
+<text x="432.5" y="592" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="600" fill="#96590A" text-anchor="middle">Hard selling</text>
+<rect x="660" y="408" width="420" height="268" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="678" y="434" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#0B1B33" text-anchor="start">Mascot</text>
+<text x="678" y="454" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#46586F" text-anchor="start">DELCO AI uses these when it creates content.</text>
+<rect x="678" y="466" width="124" height="140" rx="8" fill="#E9F1FB"/>
+<rect x="814" y="466" width="124" height="140" rx="8" fill="#0E2647"/>
+<rect x="950" y="466" width="124" height="140" rx="8" fill="#E9F1FB"/>
+<rect x="678" y="618" width="384" height="40" rx="8" fill="#1B3A66"/>
+<text x="696" y="643" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="start">Ask LUNA:  “What are we waiting on this week?”</text>
+<rect x="1180" y="10" width="280" height="580" rx="30" fill="#0B1B33"/>
+<rect x="1190" y="20" width="260" height="560" rx="22" fill="#F3F6FA"/>
+<rect x="1190" y="20" width="260" height="54" rx="0" fill="#FFFFFF"/>
+<rect x="1190" y="71" width="260" height="3" rx="0" fill="#F6A21E"/>
+<rect x="1204" y="38" width="16" height="16" rx="3" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1228" y="38" width="150" height="16" rx="8" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1236" y="50" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="#8494A8" text-anchor="start">Search</text>
+<rect x="1412" y="36" width="22" height="20" rx="5" fill="#0E2647"/>
+<text x="1204" y="96" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1B33" text-anchor="start">Brand Hub</text>
+<rect x="1204" y="112" width="230" height="110" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1216" y="134" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#0B1B33" text-anchor="start">Logo</text>
+<rect x="1204" y="234" width="230" height="96" rx="8" fill="#FFFFFF" stroke="#DDE4EC" stroke-width="1"/>
+<text x="1216" y="256" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#0B1B33" text-anchor="start">Brand colors</text>
+<rect x="1216" y="268" width="44" height="44" rx="5" fill="#F6A21E" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1270" y="268" width="44" height="44" rx="5" fill="#0E2647" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1324" y="268" width="44" height="44" rx="5" fill="#1D6FC4" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1378" y="268" width="44" height="44" rx="5" fill="#F3F6FA" stroke="#DDE4EC" stroke-width="1"/>
+<rect x="1204" y="342" width="230" height="214" rx="8" fill="#0E2647"/>
+<text x="1216" y="368" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="start">LUNA</text>
+<text x="1216" y="386" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#93A6C2" text-anchor="start">DELCO's marketing assistant</text>
+<text x="1216" y="412" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#C9D6E8" text-anchor="start">Two things are with DELCO.</text>
+<text x="1216" y="429" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#C9D6E8" text-anchor="start"></text>
+<text x="1216" y="446" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#FFFFFF" text-anchor="start">Brian owes the AC video —</text>
+<text x="1216" y="463" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#C9D6E8" text-anchor="start">due Sep 8, reminder sent.</text>
+<text x="1216" y="480" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#C9D6E8" text-anchor="start"></text>
+<text x="1216" y="497" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#FFFFFF" text-anchor="start">Chris has 5 campaign assets</text>
+<text x="1216" y="514" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#C9D6E8" text-anchor="start">to approve by Sep 10.</text>
 </svg></div>
-  <ul class="points"><li>Logo, colours, voice, mascot and offers</li><li>Set it once and every post follows it</li><li>Ask LUNA what's outstanding or what to post</li></ul>
+  <p style="margin:0; position:absolute; left:128px; top:960px; width:1664px; font-size:26px; color:#8494A8; line-height:1.3">Set the brand once and every future post follows it automatically.</p>
+  <img data-art="logo" alt="DELCO artwork" style="position:absolute; left:520px; top:430px; width:280px; height:140px; object-fit:contain"><img data-art="logo" alt="DELCO artwork" style="position:absolute; left:1460px; top:360px; width:160px; height:70px; object-fit:contain"><img data-art="dog" alt="DELCO artwork" style="position:absolute; left:920px; top:696px; width:80px; height:116px; object-fit:contain"><img data-art="dog" alt="DELCO artwork" style="position:absolute; left:1056px; top:696px; width:80px; height:116px; object-fit:contain"><img data-art="dog" alt="DELCO artwork" style="position:absolute; left:1192px; top:696px; width:80px; height:116px; object-fit:contain">
 </section>
 
-<section class="dark">
-  <h2>Every post leaves a trail</h2>
-  <ol class="trail"><li><span class="n">1</span><b>Requested</b></li><li><span class="n">2</span><b>Reminder sent</b></li><li><span class="n">3</span><b>Uploaded</b></li><li><span class="n">4</span><b>Drafted</b></li><li><span class="n">5</span><b>Approved</b></li><li><span class="n">6</span><b>Published</b></li></ol>
-  <p class="lede">Nobody has to ask where something stands or who dropped it. The software keeps the
-  record, so the conversation stays about the work.</p>
-  <p class="foot">DELCO Social Hub — prototype</p>
+<section id="trail" data-transition="fade" style="background:#0E2647; color:#FFFFFF; font-family:Inter, 'Helvetica Neue', Arial, sans-serif">
+  <h2 style="margin:0; position:absolute; left:110px; top:190px; width:1500px; font-size:64px; font-weight:800; line-height:1.05; letter-spacing:-1.5px">Every post leaves a trail</h2>
+  <div style="position:absolute; left:110px; top:400px; width:1700px; height:170px"><svg aria-label="The trail every post leaves" viewBox="0 0 1700 170" style="width:1700px; height:170px"><circle cx="130" cy="60" r="22" fill="#F6A21E"/>
+<text x="130" y="68" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="800" fill="#0E2647" text-anchor="middle">1</text>
+<text x="130" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="600" fill="#FFFFFF" text-anchor="middle">Requested</text>
+<rect x="156" y="57" width="236" height="6" rx="3" fill="#41618F"/>
+<circle cx="418" cy="60" r="22" fill="#F6A21E"/>
+<text x="418" y="68" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="800" fill="#0E2647" text-anchor="middle">2</text>
+<text x="418" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="600" fill="#FFFFFF" text-anchor="middle">Reminder sent</text>
+<rect x="444" y="57" width="236" height="6" rx="3" fill="#41618F"/>
+<circle cx="706" cy="60" r="22" fill="#F6A21E"/>
+<text x="706" y="68" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="800" fill="#0E2647" text-anchor="middle">3</text>
+<text x="706" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="600" fill="#FFFFFF" text-anchor="middle">Uploaded</text>
+<rect x="732" y="57" width="236" height="6" rx="3" fill="#41618F"/>
+<circle cx="994" cy="60" r="22" fill="#F6A21E"/>
+<text x="994" y="68" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="800" fill="#0E2647" text-anchor="middle">4</text>
+<text x="994" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="600" fill="#FFFFFF" text-anchor="middle">Drafted</text>
+<rect x="1020" y="57" width="236" height="6" rx="3" fill="#41618F"/>
+<circle cx="1282" cy="60" r="22" fill="#F6A21E"/>
+<text x="1282" y="68" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="800" fill="#0E2647" text-anchor="middle">5</text>
+<text x="1282" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="600" fill="#FFFFFF" text-anchor="middle">Approved</text>
+<rect x="1308" y="57" width="236" height="6" rx="3" fill="#41618F"/>
+<circle cx="1570" cy="60" r="22" fill="#17845C"/>
+<text x="1570" y="68" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="800" fill="#0E2647" text-anchor="middle">6</text>
+<text x="1570" y="130" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="600" fill="#FFFFFF" text-anchor="middle">Published</text>
+</svg></div>
+  <p style="margin:0; position:absolute; left:110px; top:650px; width:1500px; font-size:32px; color:#C9D6E8; line-height:1.45">Nobody has to ask where something stands or who dropped it. The software keeps the record, so the conversation stays about the work.</p>
+  <p style="margin:0; position:absolute; left:110px; top:940px; width:1700px; font-size:24px; color:#8FA6C4">DELCO Social Hub — prototype</p>
+  <aside>This is the accountability piece. It runs quietly in the background.</aside>
 </section>
 
-
-<div class="viewbar">
-  <span class="vb-tag">Scrolling view</span>
-  <a class="vb-link" href="./slides.html">Switch to slides</a>
+</div></div>
+<div class="bar">
+  <button id="prev" aria-label="Previous slide">&larr; Back</button>
+  <span id="count"></span><a class="switch" href="./index.html">Scrolling view</a>
+  <button id="next" aria-label="Next slide">Next &rarr;</button>
+  <span style="color:#51739B; font-size:12px; position:absolute; right:12px">build 3</span>
 </div>
 <script>
-var LOGO = "data:image/png;base64," + [
+var __L = "data:image/png;base64," + [
 "iVBORw0KGgoAAAANSUhEUgAAAcwAAAEWCAYAAADrfqfPAADIqklEQVR42uy9eZwcdZ3//6qjq4/qe45MJpNMJhcJCSEJELlR",
 "gjFfEWQV0FWUCK6wrtequ+rqgrDrIi5ei/Ij7KoIsiqJnOKGmOBKIGAWSAi5M5lck8lkju6ePqa7q+v4/VH1qanuru6u7unu",
 "mUn6/XjMI5Ppq7rqU+/n5/3+vN+vD4WGNewstowkUQDA0vdSonwXaGUDRR6jmb2UKN+lAACtbIBM3aiwNKNQFBQr7y2Jv2UE",
@@ -1105,7 +1801,8 @@ var LOGO = "data:image/png;base64," + [
 "ChO2KNUnAIlOHpObw8chSa/4miek+g81R9t7EnDCtt8E8CcuLN8lqvY+gE+zw71pPszqKklSyO8CadprIbAlmjBhwubf/j8a",
 "Ge6RYEwxzgAAAABJRU5ErkJggg=="
 ].join("");
-var DOG = "data:image/png;base64," + [
+window.__LOGO__ = __L;
+var __D = "data:image/png;base64," + [
 "iVBORw0KGgoAAAANSUhEUgAAAUoAAAIgCAYAAADjriCkAAEAAElEQVR42uyde3xU5Z3/P885Z2aSmTDJkJDEXAl3EBFRuXhB",
 "iCIXqZeiiLW12u3WrVK2rdVetupqu61t165L0d1f262uFkUsW7WYgGhAKyKgiIABwiUXkpiEhJkMmUlmzuX5/XHOc3Jm5sxk",
 "JpkAyvm+XnkRJpOZkzPnvJ/P9/J8v4BlZ82eX7uaN/5fliVeliVinZlzw8LH7uO0z8Uhy9LXZKn2D7JUS2Wp9v9EsfUyWZaI",
@@ -2557,14 +3254,88 @@ var DOG = "data:image/png;base64," + [
 "ANAlSWbnYwlZ1rKWBcoR5qKbQXPY9Wem/o3GY5u4rEz1UepfyFhLESVhBqPV22cBXANA5yREB3hvuVlnfAzAfQAoSA0D8AKM",
 "EVOOSohsDDJrWTs79v8BFAj774N1igIAAAAASUVORK5CYII="
 ].join("");
-
+window.__DOG__ = __D;
+</script>
+<script>
 (function () {
-  var nodes = document.querySelectorAll('[data-art]');
-  for (var i = 0; i < nodes.length; i++) {
-    var src = nodes[i].getAttribute('data-art') === 'dog' ? DOG : LOGO;
-    if (nodes[i].tagName.toLowerCase() === 'image') nodes[i].setAttribute('href', src);
-    else nodes[i].setAttribute('src', src);
+  var frame = document.getElementById('frame');
+  var stage = document.getElementById('stage');
+  var slides = stage.querySelectorAll('section');
+  var BAR = 58, i = 0;
+
+  function viewport() {
+    var w = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    var h = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    if (window.visualViewport) {
+      w = Math.min(w, window.visualViewport.width);
+      h = Math.min(h, window.visualViewport.height);
+    }
+    return { w: Math.round(w), h: Math.round(h) - BAR };
   }
+
+  function place(s, w, h) {
+    stage.style.transform =
+      'translate(' + ((w - 1920 * s) / 2) + 'px,' + ((h - 1080 * s) / 2) + 'px) scale(' + s + ')';
+  }
+
+  function fit() {
+    var v = viewport();
+    if (v.w < 1 || v.h < 1) return;
+    frame.style.width = v.w + 'px';
+    frame.style.height = v.h + 'px';
+    var s = Math.min(v.w / 1920, v.h / 1080);
+    place(s, v.w, v.h);
+    // Measure what actually painted and correct it. Mobile browsers report
+    // viewport sizes inconsistently, so trust the rendered box, not the numbers.
+    requestAnimationFrame(function () {
+      var box = stage.getBoundingClientRect();
+      if (box.width > v.w + 1 || box.height > v.h + 1) {
+        place(s * Math.min(v.w / box.width, v.h / box.height), v.w, v.h);
+      }
+    });
+  }
+
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    for (var k = 0; k < slides.length; k++) slides[k].className = (k === i ? 'on' : '');
+    document.getElementById('count').textContent = (i + 1) + ' / ' + slides.length;
+    fit();
+  }
+
+  document.getElementById('next').addEventListener('click', function () { show(i + 1); });
+  document.getElementById('prev').addEventListener('click', function () { show(i - 1); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { show(i + 1); e.preventDefault(); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { show(i - 1); e.preventDefault(); }
+  });
+
+  var x0 = null, y0 = null;
+  frame.addEventListener('touchstart', function (e) {
+    x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+  }, { passive: true });
+  frame.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) show(i + (dx < 0 ? 1 : -1));
+    x0 = y0 = null;
+  }, { passive: true });
+
+  window.addEventListener('resize', fit);
+  window.addEventListener('orientationchange', function () { setTimeout(fit, 150); });
+  window.addEventListener('load', fit);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', fit);
+    window.visualViewport.addEventListener('scroll', fit);
+  }
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(document.body);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  [60, 250, 800, 1600].forEach(function (ms) { setTimeout(fit, ms); });
+
+  var LOGO = window.__LOGO__, DOG = window.__DOG__;
+  Array.prototype.forEach.call(document.querySelectorAll('[data-art="logo"]'), function (n) { n.src = LOGO; });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-art="dog"]'), function (n) { n.src = DOG; });
+
+  show(0);
 })();
 </script>
 </body>

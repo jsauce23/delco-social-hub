@@ -1,4 +1,4 @@
-# Static site — nothing to build, publish the repo root as-is.
+# Static deck — nothing to build.
 [build]
   publish = "."
   command = ""

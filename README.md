@@ -1,39 +1,20 @@
-# DELCO Social Hub — presentation deck
+# DELCO Social Hub — presentation
 
-A self-contained slide deck explaining what DELCO Social Hub does, with
-mockups of every screen on desktop and mobile.
+Two views of the same deck, on one site:
 
-Everything lives in `index.html` — the DELCO logo and mascot artwork are
-embedded in the file, so there are no other assets to manage.
+- `index.html` — scrolling version. Reads well on a phone, works anywhere.
+- `slides.html` — classic 16:9 slides for presenting on a laptop or screen.
 
-## Viewing it
+Each page has a link to the other at the bottom, so anyone can switch.
+Both files carry their own artwork; there are no other assets.
 
-Open `index.html` in any browser. Arrow keys or the Back / Next buttons move
-between slides; swipe works on a phone.
+## Deploy on Netlify
 
-## Deploying
+**Drag and drop:** put all three files in one folder and drop it on
+app.netlify.com/drop.
 
-**GitHub Pages** — Settings → Pages → Deploy from a branch → `main` / `root`.
-Live at `https://<username>.github.io/<repo>/`.
+**From a repo:** Add new site → Import an existing project. No build command;
+publish directory `.` (already set in `netlify.toml`).
 
-**Netlify** — Add new site → Import an existing project → pick this repo.
-Leave the build command empty and set the publish directory to `.`
-(`netlify.toml` already sets this). Every push redeploys automatically.
-
-## Slides
-
-1. Cover
-2. The four questions it answers
-3. Dashboard
-4. Content Planner
-5. Create with AI
-6. Content Requests
-7. Content Library
-8. Analytics
-9. Brand Hub and LUNA
-10. Every post leaves a trail
-
-## Note
-
-The numbers shown in Analytics are demo data. Live Instagram and TikTok
-metrics are planned, not connected.
+The link you share is the site root — it opens the scrolling version, which is
+the safer default on an unknown device.
